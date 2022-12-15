@@ -1,0 +1,27 @@
+{
+  "name": "threejsport",
+  "version": "1.0.0",
+  "description": "my new portfolio built in three js and react ",
+  "main": "index.js",
+  "repository": "git@github.com:LuciLua/newthreejsport",
+  "author": "LuciLua <luci.lua81@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "dependencies": {
+    "framer-motion": "^7.10.0",
+    "next": "^13.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.15",
+    "@types/react": "^18.0.26",
+    "react-icons": "^4.7.1",
+    "sass": "^1.56.2",
+    "typescript": "^4.9.4"
+  }
+}
