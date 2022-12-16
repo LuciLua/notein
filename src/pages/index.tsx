@@ -4,11 +4,54 @@ import AnimatedElementFade from "../styles/animations/AnimatedElementFade"
 import AnimatedPage from "../styles/animations/AnimatedPage"
 import styles from "../styles/pages/home.module.scss"
 
+import { useRef } from "react";
+import {
+    motion,
+    useScroll,
+    useSpring,
+    useTransform,
+    MotionValue
+} from "framer-motion";
+
 import { BiDownArrow, BiRightArrow } from 'react-icons/bi'
 import Link from 'next/link'
 import AnimatedToDown from '../styles/animations/AnimatedToDown'
+import { useEffect } from 'react'
 
-function Home() {
+// import  from 'react-scroll'
+
+function Home({ id }: { id: number }) {
+
+    function useParallax(value: MotionValue<number>, distance: number) {
+        return useTransform(value, [0, 1], [-distance, distance]);
+    }
+
+    function onScroll() {
+        const mainContent = document.querySelector('main')
+        const mainContentPositionTop = mainContent.getBoundingClientRect().top
+
+
+        if (mainContentPositionTop < -200) {
+            mainContent.style.top = '100px'
+            mainContent.style.opacity = '0%'
+            mainContent.style.transition = '0.3s'
+            
+        } else {
+            mainContent.style.top = '0px'
+            mainContent.style.opacity = '100%'
+            mainContent.style.transition = '0.3s'
+        }
+    }
+
+    useEffect(() => {
+        addEventListener('scroll', onScroll)
+
+    })
+
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({ target: ref });
+    const y = useParallax(scrollYProgress, 150);
+    // https://www.framer.com/docs/scroll-animations/
     return (
         <>
             <Head>
@@ -40,9 +83,25 @@ function Home() {
                 </main>
                 <div className={styles.section}>
                     <h1>Projects</h1>
-                    CARDS
-                    CARDS
-                    CARDS
+                    <motion.h2 style={{ y }}>{`Pokedex`}</motion.h2>
+                    <motion.h2 style={{ y }}>{`Desktop`}</motion.h2>
+                    <motion.h2 style={{ y }}>{`ToDo List`}</motion.h2>
+                    <motion.h2 style={{ y }}>{`React Native App`}</motion.h2>
+
+                    <div className={styles.containerAnimated}>
+                        <motion.div className={styles.items}>
+                        </motion.div>
+                        <motion.div className={styles.items}>
+                        </motion.div>
+                        <motion.div className={styles.items}>
+                        </motion.div>
+                        <motion.div className={styles.items}>
+                        </motion.div>
+                        <motion.div className={styles.items}>
+                        </motion.div>
+                    </div>
+
+                    <iframe src='https://my.spline.design/untitled-552dfa7b1a3aae071564e43526ae38b5/' frameBorder='0' width='100%' height='100%'></iframe>
                 </div>
             </div>
         </>
