@@ -7,4 +7,5 @@
 - sass
 - typescript
 - react-icons
-- motion-framer
+- framer-motion
+- react-scroll
