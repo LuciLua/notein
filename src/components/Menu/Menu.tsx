@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import styles from './Menu.module.scss'
+import {AiTwotoneHome, AiTwotoneProfile} from 'react-icons/ai'
 
 function Menu() {
     return (
         <div className={styles.container}>
-            <Link href={'/'}>Home</Link>
-            <Link href={'/about'}>About</Link>
+            <Link href={'/'}><AiTwotoneHome/></Link>
+            <Link href={'/about'}><AiTwotoneProfile/></Link>
         </div>
     )
 }
