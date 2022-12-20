@@ -64,7 +64,7 @@ function Home({ id }: { id: number }) {
                 <main className={styles.main}>
                     <AnimatedPage>
                         <div className={styles.containerText}>
-                            <h1>HOME</h1>
+                            <h1>LUCI LUA</h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ipsam hic adipisci amet possimus doloribus minus culpa ullam cum exercitationem atque excepturi, iure distinctio aut eaque, assumenda laborum deleniti aspernatur!</p>
                             <AnimatedToDown delay={0.5} duration={0.3}>
                                 <p className={styles.scrollTXT}>Scroll</p>

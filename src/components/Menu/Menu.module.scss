@@ -1,5 +1,5 @@
 .container {
-    background-color: #dfdbd2;
+    background-color: #1a1c21;
 
     width: 40px;
     height: calc(100vh);
@@ -12,12 +12,13 @@
     align-items: center;
     flex-direction: column;
 
-    box-shadow: 0 0 5px #dfdbd2;
+    box-shadow: 0 0 5px #050506;
 
 
     z-index: 10;
 
     padding-top: 30px;
+
     a {
         width: fit-content;
         height: fit-content;
@@ -26,8 +27,16 @@
         justify-content: center;
         align-items: center;
 
-        color: #989489;
+        color: #a1d2f370;
+
         margin: 30px;
+
+        transition: 0.3s;
+
+        &:hover {
+            transition: 0.3s;
+            color: #a1d2f3;
+        }
 
     }
 }
