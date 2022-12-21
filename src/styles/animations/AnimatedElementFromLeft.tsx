@@ -1,23 +1,24 @@
 import { motion } from "framer-motion";
 
 const animations = {
-    initial: { opacity: 0, y: -20 },
-    animate: { opacity: 1, y:0 },
-    exit: { opacity: 0,  y: 100 },
+    initial: { x: -100 },
+    animate: { x: 0 },
+    exit: { x: 0 },
 };
 
-const AnimatedPage = ({ children, delay = 0 }) => {
+const AnimatedElementFromLeft = ({ children }) => {
     return (
         <motion.div
+            style={{ position: "fixed", top: "0", left: "0" }}
             variants={animations}
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={{ duration: 1, delay: delay }}
+            transition={{ duration: 1, delay: 0 }}
         >
             {children}
         </motion.div>
     );
 };
 
-export default AnimatedPage;
+export default AnimatedElementFromLeft;

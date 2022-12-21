@@ -1,0 +1,40 @@
+.container {
+    min-height: 100vh;
+    width: calc(100vw - var(--menuWidth));
+    margin-left: var(--menuWidth);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+
+    line-height: 1.5;
+    color: #1f1f1e;
+
+    padding: 30px;
+
+    .containerText {
+        max-width: 800px;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        position: relative;
+        margin-bottom: 20px;
+
+        h1 {
+            font-size: 3em;
+            text-align: start;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: justify;
+            color: #1f1f1e;
+        }
+    }
+}

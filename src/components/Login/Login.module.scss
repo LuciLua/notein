@@ -1,0 +1,28 @@
+.container {
+    width: 330px;
+    min-height: 420px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: #1e1e1e;
+    border-radius: 4px;
+
+    position: relative;
+
+    box-shadow: 5px 10px 12px rgba(0, 0, 0, 0.208);
+
+    .tick{
+        background-color: #a88a63d2;
+        width: 70px;
+        height: 18px;
+        position: absolute;
+        top: -10px;
+        right: 120px;
+
+        border-radius: 2px;
+
+        transform: rotateZ(-175deg);
+    }
+}

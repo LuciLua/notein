@@ -1,0 +1,64 @@
+.MyNotes {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: 100%;
+
+    .note {
+        width: 200px;
+        height: 200px;
+        background-color: #f3e0c6;
+        border-radius: 4px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-shadow: 5px 9px 12px #945d10;
+        margin: 30px;
+
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 20px;
+            background-color: #e68f16b7;
+            top: -10px;
+            left: 70px;
+
+            transform: rotateZ(182deg);
+        }
+
+
+        p {
+            font-size: 15px;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            line-height: 1.5;
+            /* fallback */
+            max-height: 32px;
+            /* fallback */
+            -webkit-line-clamp: 5;
+            /* number of lines to show */
+            -webkit-box-orient: vertical;
+
+            min-height: 120px;
+            max-height: 120px;
+
+
+            text-align: justify;
+
+            padding: 10px;
+
+        }
+
+    }
+}

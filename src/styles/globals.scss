@@ -1,10 +1,12 @@
-*::before, *, *::after{
+*::before,
+*,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Poppins;
     font-weight: 500;
     min-height: 100vh;
@@ -17,7 +19,11 @@ body{
     max-width: 100vw;
     overflow-x: hidden;
 
-    background-color: #282c34;
+    background-color: #ff9f19;
 
 }
 
+
+:root {
+    --menuWidth: 50px;
+}
