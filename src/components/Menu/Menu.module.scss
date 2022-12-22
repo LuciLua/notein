@@ -1,4 +1,4 @@
-.container {
+.c_menu {
     background-color: #1a1c21;
 
     width: var(--menuWidth);
@@ -18,14 +18,14 @@
     padding-top: 30px;
     
     
-    ul {
+    .c_menu_list {
         margin-top: auto;
         display: flex;
         flex-direction: column;
         list-style: none;
-        li {
+        .c_menu_list__item {
 
-            a {
+            .c_menu_list__item__link {
                 width: fit-content;
                 height: fit-content;
 
