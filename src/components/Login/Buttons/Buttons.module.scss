@@ -1,4 +1,4 @@
-.buttons {
+.c_buttons {
     width: 100%;
 
     display: flex;
@@ -12,7 +12,7 @@
 
     margin-bottom: auto;
 
-    button {
+    .c_btn {
         background-color: #ffbd18;
         border: none;
         border-radius: 4px;
@@ -22,11 +22,11 @@
         align-items: center;
 
         width: 100%;
-        
+
         cursor: pointer;
 
         overflow: hidden;
-        
+
         a {
             color: #1e1e1e;
             text-decoration: none;
@@ -38,7 +38,7 @@
         }
     }
 
-    .create {
+    .c_btn_create {
         margin-top: 5px;
 
         span>a {
