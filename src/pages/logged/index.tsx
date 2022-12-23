@@ -16,10 +16,6 @@ function Logged() {
                     <Menu />
                 </AnimatedElementFromLeft>
                 <AnimatedPage delay={1}>
-                    <div className={styles.containerText}>
-                        <h1>My notes</h1>
-                        <p>All your notes here</p>
-                    </div>
                     <MyNotes />
                 </AnimatedPage>
             </main>

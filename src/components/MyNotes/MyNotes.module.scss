@@ -1,64 +1,122 @@
-.MyNotes {
+.c_notes {
+    .c_text {
+        max-width: 800px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
 
-    width: 100%;
-    height: 100%;
+        position: relative;
+        margin-bottom: 20px;
 
-    .note {
-        width: 200px;
-        height: 200px;
-        background-color: #f3e0c6;
-        border-radius: 4px;
+        .c_text_title_btn {
+            display: flex;
+            align-items: center;
+
+            gap: 30px;
+
+            h1 {
+                font-size: 3em;
+                text-align: start;
+            }
+
+            button {
+                border-radius: 4px;
+                background-color: #ed9517;
+                border: none;
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #945d10;
+                    font-size: 25px;
+                    font-family: Poppins;
+                }
+            }
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: justify;
+            color: #1f1f1e;
+        }
+    }
+
+    .MyNotes {
 
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
 
-        box-shadow: 5px 9px 12px #945d10;
-        margin: 30px;
+        width: 100%;
+        height: 100%;
 
-        position: relative;
+        .note {
+            width: 200px;
+            height: 200px;
+            background-color: #f3e0c6;
+            border-radius: 4px;
 
-        &::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 20px;
-            background-color: #e68f16b7;
-            top: -10px;
-            left: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            transform: rotateZ(182deg);
+            box-shadow: 5px 9px 12px #945d10;
+            margin: 30px;
+
+            position: relative;
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateX(6deg) rotateY(0deg);
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 60px;
+                height: 20px;
+                background-color: #e68f16b7;
+                top: -10px;
+                left: 70px;
+
+                transform: rotateZ(182deg);
+            }
+
+
+            p {
+                font-size: 15px;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                line-height: 1.5;
+                /* fallback */
+                max-height: 32px;
+                /* fallback */
+                -webkit-line-clamp: 5;
+                /* number of lines to show */
+                -webkit-box-orient: vertical;
+
+                min-height: 120px;
+                max-height: 120px;
+
+
+                text-align: justify;
+
+                padding: 10px;
+
+            }
+
         }
-
-
-        p {
-            font-size: 15px;
-
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            line-height: 1.5;
-            /* fallback */
-            max-height: 32px;
-            /* fallback */
-            -webkit-line-clamp: 5;
-            /* number of lines to show */
-            -webkit-box-orient: vertical;
-
-            min-height: 120px;
-            max-height: 120px;
-
-
-            text-align: justify;
-
-            padding: 10px;
-
-        }
-
     }
 }
