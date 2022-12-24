@@ -1,7 +1,6 @@
-## my new portfolio
+## NoteIn
 
 ### tools
-- three.js
 - react
 - next.js
 - sass
