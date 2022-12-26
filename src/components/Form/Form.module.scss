@@ -1,6 +1,7 @@
 .container {
     width: 330px;
     min-height: 420px;
+    height: fit-content;
 
     display: flex;
     flex-direction: column;

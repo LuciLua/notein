@@ -12,7 +12,7 @@ function Home({ id }: { id: number }) {
             </Head>
             <main className={styles.main}>
                 <AnimatedPage>
-                    <Form state={'signIn'} />
+                    <Form state={'signUp'} />
                 </AnimatedPage>
             </main>
         </div>
