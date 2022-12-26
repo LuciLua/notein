@@ -14,7 +14,8 @@ function Inputs({ setStatusLogin }) {
         // var valid = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
         // var valid = /\S+@\S+\.\S+/
 
-        var regexObj = new RegExp('[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[a-zA-Z0-9]')
+        // var regexObj = new RegExp('[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[a-zA-Z0-9]')
+		var regexObj = new RegExp('[a-zA-Z0-9]+@+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]')
         if (regexObj.test(email)) {
             return true
         } else {
