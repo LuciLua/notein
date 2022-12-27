@@ -14,13 +14,13 @@
 
     h1 {
         font-size: 23px;
-        color: rgb(236, 255, 255);
+        color: var(--grayLightH1);
         font-weight: 700;
     }
     
     h2 {
         font-size: 12px;
-        color: rgb(121, 147, 148);
+        color: var(--grayLightH2);
         font-weight: 400;
     }
 }

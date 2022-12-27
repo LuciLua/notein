@@ -1,5 +1,5 @@
 .footer {
-    background-color: #ffbd18;
+    background-color: var(--yellowLightPrimary);
     height: 24px;
     width: 100%;
 
@@ -18,8 +18,8 @@
             align-items: center;
 
             list-style: none;
-            color: #1f1f1e;
-            font-size: 1.2em;
+            color: var(--grayDarkPrimary);
+            font-size: 1.1em;
 
             margin: 0 2px;
             padding: 0 5px;

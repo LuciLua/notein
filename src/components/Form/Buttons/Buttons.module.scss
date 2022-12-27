@@ -28,8 +28,10 @@
 
         overflow: hidden;
 
+        outline: none;
+
         a {
-            color: #0101018f;
+            color: var(--grayDarkPrimary90opacity);
             text-decoration: none;
             font-weight: 600;
             font-family: Poppins;
@@ -40,34 +42,41 @@
             cursor: default;
             user-select: none;
             pointer-events: none;
+
         }
 
         &.active {
-            background-color: #ff9f19;
+            background-color: var(--yellowPrimary);
             color: #1e1e1e;
             cursor: pointer;
             user-select: none;
             pointer-events: all;
 
+            &:focus {
+                background-color: var(--yellowPastel);
+                outline: 1px solid var(--yellowPrimary);
+            }
+
             a {
                 user-select: none;
                 pointer-events: all;
-                color: #1e1e1e;
+                color: var(--grayDarkPrimary);
                 cursor: pointer;
 
                 &:hover {
-                    background-color: #f2991d;
-
+                    background-color: var(--yellowPastel);
                 }
             }
         }
     }
 
     .c_btn_create {
-        margin: 10px 0 30px 0;
+        margin: 15px 0 30px 0;
+        border: none;
+        background-color: transparent;
 
         span>a {
-            color: #ffbe1899;
+            color: var(--yellowtDescriptions);
             font-weight: 300;
             font-size: 12px;
         }

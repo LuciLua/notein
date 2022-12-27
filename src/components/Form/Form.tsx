@@ -9,15 +9,30 @@ import SignUp from "./SignUp/SignUp"
 
 function Form({ state }) {
     const [statusLogin, setStatusLogin] = useState<Boolean>(false)
+    const [path, setPath] = useState<String>('/')
+
+    function verifyIfCanSubmit(e){
+        if(statusLogin){
+            setPath('/logged')
+        }
+        else {
+            setPath('/')
+            e.preventDefault()
+        }
+    }
+
 
     return (
-        <div className={styles.container}>
+        <form className={styles.container} onSubmit={e => verifyIfCanSubmit(e)} action={`${path}`}>
             <div className={styles.tick} />
-            {state == 'signIn' ? <SignIn setStatusLogin={setStatusLogin} /> : <SignUp setStatusLogin={setStatusLogin} />}
+            {state == 'signIn' ?
+                <SignIn setStatusLogin={setStatusLogin} />
+                :
+                <SignUp setStatusLogin={setStatusLogin} />}
             <Buttons statusLogin={statusLogin} />
             <Footer />
-        </div>
+        </form>
     )
 }
 
-export default Form
+export default Form 

@@ -1,4 +1,4 @@
-import styles from "./SignIn.module.scss"
+import styles from "../Inputs.module.scss"
 import { AiOutlineUser } from "react-icons/ai"
 import { RiLockPasswordLine } from "react-icons/ri"
 import { useEffect, useState } from "react"
@@ -51,16 +51,16 @@ function SignIn({ setStatusLogin }) {
             <Header title={'Login'} description={'Access your account now'} />
             <div className={styles.inputs}>
                 <div className={styles.input}>
-                    <label htmlFor="login">Login</label>
+                    <label htmlFor="email">Email</label>
                     <div className={styles.icon}>
                         <AiOutlineUser />
                     </div>
                     <input
                         autoComplete="off"
                         onInput={(e: any) => setEmail(e.target.value)}
-                        id="login"
+                        id="email"
                         type="text"
-                        placeholder="Login" />
+                        placeholder="Email" />
                 </div>
                 <div className={styles.input}>
                     <label htmlFor="pass">Senha</label>

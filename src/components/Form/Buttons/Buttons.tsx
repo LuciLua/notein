@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import styles from "./Buttons.module.scss"
 
 function Buttons({ statusLogin }) {
@@ -45,13 +45,13 @@ function Buttons({ statusLogin }) {
                     <span ref={c_btn_span} />
                 </Link>
             </button>
-            <div className={styles.c_btn_create}>
+            <button className={styles.c_btn_create}>
                 <span>
                     <Link href={hrefLinkByStateLogin}>
                         <span ref={c_btn_create_span} />
                     </Link>
                 </span>
-            </div>
+            </button>
         </div>
     )
 }
