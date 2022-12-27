@@ -19,15 +19,38 @@ body {
     max-width: 100vw;
     overflow-x: hidden;
 
-    background-color: #ff9f19;
+    background-color: var(--yellowPrimary);
 
 }
 
 
 :root {
     --menuWidth: 50px;
+
+    --write: #fff;
+
+    --grayLightH1: #ecfffe;
+    --grayLightH2: #799394;
+    --yellowtDescriptions: #ffbe1899;
+
+
+    --grayDarkPrimary: #1f1f1e;
+    --grayDarkMedium: #565656;
+    --grayDarkLight: #f4f4f4;
+
+
+    --grayDarkPrimary90opacity: #1f1f1ee5;
+
+    --yellowPrimary: #ff9f19;
+    --yellowLightPrimary: #ffbd18;
+    
+    --yellowPastel: #f0ab4b;
+
+    --yellowDark: #b26f11;
+
+    --yellow75opacity: #ff9f19b0;
 }
 
-.active{
+.active {
     color: #ff9f19;
 }
