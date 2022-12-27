@@ -57,7 +57,7 @@ function Buttons({ statusLogin, typeForm, setTypeForm }) {
                 <span ref={c_btn_span} />
             </button>
 
-            <button className={styles.c_btn_create}>
+            <button className={styles.c_btn_create} disabled>
                 <span>
                     <Link href={hrefLinkByStateLogin}>
                         <span ref={c_btn_create_span} />
