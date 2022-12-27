@@ -30,20 +30,19 @@
 
         outline: none;
 
-        a {
-            color: var(--grayDarkPrimary90opacity);
-            text-decoration: none;
-            font-weight: 600;
-            font-family: Poppins;
-            width: 100%;
-            height: 100%;
-            padding: 8px;
+        color: var(--grayDarkPrimary90opacity);
+        text-decoration: none;
+        font-weight: 600;
+        font-family: Poppins;
+        width: 100%;
+        height: 100%;
+        padding: 8px;
 
-            cursor: default;
-            user-select: none;
-            pointer-events: none;
+        cursor: default;
+        user-select: none;
+        pointer-events: none;
 
-        }
+
 
         &.active {
             background-color: var(--yellowPrimary);

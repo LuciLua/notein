@@ -11,12 +11,23 @@ function Form({ state }) {
     const [statusLogin, setStatusLogin] = useState<Boolean>(false)
     const [path, setPath] = useState<String>('/')
 
-    function verifyIfCanSubmit(e){
-        if(statusLogin){
-            setPath('/logged')
-        }
-        else {
-            setPath('/')
+    const [typeForm, setTypeForm] = useState<String>('/')
+
+    console.log(typeForm)
+
+    function verifyIfCanSubmit(e) {
+        // se dados estiverem ok
+        if (statusLogin) {
+            console.log('ok')
+            if (typeForm == 'signUp') {
+                // se o formulario for do tipo cadastro, va para o login
+                setPath('/')
+            } else {
+                // se o formulario for do tipo login, va para home
+                setPath('/logged')
+            }
+        } else {
+            console.log('Not yet')
             e.preventDefault()
         }
     }
@@ -29,7 +40,7 @@ function Form({ state }) {
                 <SignIn setStatusLogin={setStatusLogin} />
                 :
                 <SignUp setStatusLogin={setStatusLogin} />}
-            <Buttons statusLogin={statusLogin} />
+            <Buttons statusLogin={statusLogin} typeForm={typeForm} setTypeForm={setTypeForm} />
             <Footer />
         </form>
     )

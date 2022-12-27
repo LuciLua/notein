@@ -2,7 +2,7 @@ import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import styles from "./Buttons.module.scss"
 
-function Buttons({ statusLogin }) {
+function Buttons({ statusLogin, typeForm, setTypeForm }) {
 
     const c_btn = useRef<any>(null)
 
@@ -11,11 +11,13 @@ function Buttons({ statusLogin }) {
 
     const [hrefLinkByStateLogin, setHrefLinkByStateLogin] = useState<string>('/')
 
+
     useEffect(() => {
         changeBtn()
         verifyLoginStateByPathname()
     })
 
+    console.log(typeForm)
 
     function verifyLoginStateByPathname() {
         const pathname = window.location.pathname
@@ -23,10 +25,17 @@ function Buttons({ statusLogin }) {
             c_btn_span.current.innerText = 'Create now'
             c_btn_create_span.current.innerText = 'Login here'
             setHrefLinkByStateLogin('/')
+            setTypeForm('signUp')
         } else {
             c_btn_span.current.innerText = 'Login'
             c_btn_create_span.current.innerText = 'Create your account here'
             setHrefLinkByStateLogin('/signUp')
+            setTypeForm('/signIn')
+
+            if (statusLogin) {
+            } else {
+                c_btn.current.disable
+            }
         }
     }
 
@@ -40,11 +49,14 @@ function Buttons({ statusLogin }) {
 
     return (
         <div className={styles.c_buttons}>
-            <button className={`${styles.c_btn}`} ref={c_btn}>
-                <Link href={'/logged'}>
-                    <span ref={c_btn_span} />
-                </Link>
+
+            <button
+                ref={c_btn}
+                className={`${styles.c_btn}`}
+                disabled={!statusLogin}>
+                <span ref={c_btn_span} />
             </button>
+
             <button className={styles.c_btn_create}>
                 <span>
                     <Link href={hrefLinkByStateLogin}>
