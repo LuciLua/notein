@@ -70,14 +70,18 @@
     }
 
     .c_btn_create {
-        margin: 15px 0 30px 0;
+        cursor: pointer;
         border: none;
+        margin: 15px 0 30px 0;
+        
         background-color: transparent;
+        color: var(--yellowtDescriptions);
 
-        span>a {
-            color: var(--yellowtDescriptions);
-            font-weight: 300;
-            font-size: 12px;
+        font-weight: 300;
+        font-size: 12px;
+
+        &:hover {
+            text-decoration: 1px underline var(--yellowtDescriptions);
         }
     }
 }

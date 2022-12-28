@@ -9,7 +9,7 @@ import SignUp from "./SignUp/SignUp"
 import Buttons from "./Buttons/Buttons"
 import Footer from "./Footer/Footer"
 
-function Form({ state }) {
+function Form({ state, setState }) {
     const [statusLogin, setStatusLogin] = useState<Boolean>(false)
     const [path, setPath] = useState<String>('/')
     const [typeForm, setTypeForm] = useState<String>('/')
@@ -35,13 +35,16 @@ function Form({ state }) {
 
 
     return (
-        <form className={styles.container} onSubmit={e => verifyIfCanSubmit(e)} action={`${path}`}>
+        <form
+            className={styles.container}
+            onSubmit={e => verifyIfCanSubmit(e)}
+            action={`${path}`}>
             <div className={styles.tick} />
             {state == 'signIn' ?
                 <SignIn setStatusLogin={setStatusLogin} />
                 :
                 <SignUp setStatusLogin={setStatusLogin} />}
-            <Buttons statusLogin={statusLogin} typeForm={typeForm} setTypeForm={setTypeForm} />
+            <Buttons setState={setState} state={state} statusLogin={statusLogin} typeForm={typeForm} setTypeForm={setTypeForm} />
             <Footer />
         </form>
     )

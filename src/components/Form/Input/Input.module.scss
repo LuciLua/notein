@@ -32,8 +32,17 @@
 
         background-color: transparent;
 
+        box-shadow: 0 0 0px 1000px var(--grayDarkPrimary) inset;
+        -webkit-box-shadow: 0 0 0px 1000px var(--grayDarkPrimary) inset;
+
         &:focus {
             outline: 1px solid var(--yellow75opacity);
+        }
+        &:not(:focus){
+            -webkit-text-fill-color: var(--grayDarkMedium);
+        }
+        &:not(:placeholder-shown){
+            -webkit-text-fill-color: var(--write);
         }
     }
 }

@@ -5,15 +5,11 @@ import { useEffect, useRef, useState } from "react"
 // next components
 import Link from "next/link"
 
-function Buttons({ statusLogin, typeForm, setTypeForm }) {
+function Buttons({ statusLogin, typeForm, setTypeForm, state, setState }) {
 
     const c_btn = useRef<any>(null)
-
     const c_btn_span = useRef<any>(null)
     const c_btn_create_span = useRef<any>(null)
-
-    const [hrefLinkByStateLogin, setHrefLinkByStateLogin] = useState<string>('/')
-
 
     useEffect(() => {
         changeBtn()
@@ -23,16 +19,13 @@ function Buttons({ statusLogin, typeForm, setTypeForm }) {
     console.log(typeForm)
 
     function verifyLoginStateByPathname() {
-        const pathname = window.location.pathname
-        if (pathname == '/signUp') {
+        if (state == 'signUp') {
             c_btn_span.current.innerText = 'Create now'
             c_btn_create_span.current.innerText = 'Login here'
-            setHrefLinkByStateLogin('/')
             setTypeForm('signUp')
         } else {
             c_btn_span.current.innerText = 'Login'
             c_btn_create_span.current.innerText = 'Create your account here'
-            setHrefLinkByStateLogin('/signUp')
             setTypeForm('/signIn')
 
             if (statusLogin) {
@@ -50,22 +43,20 @@ function Buttons({ statusLogin, typeForm, setTypeForm }) {
         }
     }
 
+    function changeState() {
+        state == 'signIn' ? setState('signUp') : setState('signIn')
+    }
+
     return (
         <div className={styles.c_buttons}>
-
             <button
                 ref={c_btn}
                 className={`${styles.c_btn}`}
                 disabled={!statusLogin}>
                 <span ref={c_btn_span} />
             </button>
-
-            <button className={styles.c_btn_create} disabled>
-                <span>
-                    <Link href={hrefLinkByStateLogin}>
-                        <span ref={c_btn_create_span} />
-                    </Link>
-                </span>
+            <button className={styles.c_btn_create} onClick={() => changeState()}>
+                <span ref={c_btn_create_span} />
             </button>
         </div>
     )

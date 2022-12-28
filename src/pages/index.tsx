@@ -6,8 +6,12 @@ import AnimatedPage from "../styles/animations/AnimatedPage"
 import Form from '../components/Form/Form'
 // next components
 import Head from 'next/head'
+// react hooks
+import { useState } from "react"
 
-function Home({ id }: { id: number }) {
+function Home() {
+    const [state, setState] = useState('signIn')
+
     return (
         <div className={styles.container}>
             <Head>
@@ -15,7 +19,7 @@ function Home({ id }: { id: number }) {
             </Head>
             <main className={styles.main}>
                 <AnimatedPage>
-                    <Form state={'signIn'} />
+                    <Form state={state} setState={setState} />
                 </AnimatedPage>
             </main>
         </div>

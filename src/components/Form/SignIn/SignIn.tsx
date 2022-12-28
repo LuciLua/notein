@@ -50,7 +50,7 @@ function SignIn({ setStatusLogin }) {
                     type={"text"}
                     placeholder="Email"
                     title={"Email"}
-                    autocomplete="off" />
+                    autocomplete="email" />
                 <Input
                     label={"Senha"}
                     icon={<RiLockPasswordLine />}
