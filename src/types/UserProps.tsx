@@ -1,7 +1,7 @@
 export type UserProps = {
-    id: number,
-    username: string,
-    email: string,
-    pass: string,
-    passConfirm: string,
+    id: Number,
+    username: String,
+    email: String,
+    pass: String,
+    passConfirm: String,
 }

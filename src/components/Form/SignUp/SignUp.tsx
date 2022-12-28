@@ -4,12 +4,13 @@ import styles from "../Form.module.scss"
 import { AiOutlineUser } from "react-icons/ai"
 import { RiLockPasswordLine } from "react-icons/ri"
 // React Hooks
-import { useEffect, useState } from "react"
+import { FormEvent, InputHTMLAttributes, useEffect, useState } from "react"
 // Components
 import Header from "../Header/Header"
 import Input from "../Input/Input"
 // types
 import { UserProps } from "../../../types/UserProps"
+import EventEmitter from "events"
 
 function SignUp({ setStatusLogin }) {
 
@@ -37,16 +38,15 @@ function SignUp({ setStatusLogin }) {
         return passConfirm == pass ? true : false
     }
 
-
-    function formValidation(username: any, email: any, pass: any, passConfirm: any) {
-        if (validUsername(username) &&
+    function formValidation(username: String, email: String, pass: String, passConfirm: String) {
+        return validUsername(username) &&
             validEmail(email) &&
             validPass(pass) &&
-            validPassConfirm(passConfirm)) {
+            validPassConfirm(passConfirm)
+            ?
             setStatusLogin(true)
-        } else {
+            :
             setStatusLogin(false)
-        }
     }
 
     useEffect(() => {
@@ -60,34 +60,34 @@ function SignUp({ setStatusLogin }) {
                 <Input
                     label={"Username"}
                     icon={<AiOutlineUser />}
-                    onInput={(e: any) => setUsername(e.target.value)}
+                    onChange={(e: any) => setUsername(e.target.value)}
+                    value={username}
                     type={"text"}
                     placeholder="Username"
-                    title={"Username"}
                     autocomplete="nickname" />
                 <Input
                     label={"Email"}
                     icon={<AiOutlineUser />}
-                    onInput={(e: any) => setEmail(e.target.value)}
+                    onChange={(e: any) => setEmail(e.target.value)}
                     type={"text"}
                     placeholder="Email"
-                    title={"Email"}
+                    value={email}
                     autocomplete="off" />
                 <Input
                     label={"Senha"}
                     icon={<RiLockPasswordLine />}
-                    onInput={(e: any) => setPass(e.target.value)}
+                    onChange={(e: any) => setPass(e.target.value)}
                     type={"password"}
                     placeholder="Senha"
-                    title={"Senha"}
+                    value={pass}
                     autocomplete="current-password" />
                 <Input
                     label={"Confirme sua senha"}
                     icon={<RiLockPasswordLine />}
-                    onInput={(e: any) => setPassConfirm(e.target.value)}
+                    onChange={(e: any) => setPassConfirm(e.target.value)}
                     type={"password"}
                     placeholder="Senha"
-                    title={"Senha"}
+                    value={passConfirm}
                     autocomplete="off" />
             </div>
         </div>

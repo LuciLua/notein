@@ -1,7 +1,7 @@
 // styles
 import styles from "./Input.module.scss"
 
-function Input({ label, icon, onInput, type, placeholder, title, autocomplete }) {
+function Input({ label, icon, onChange, type, placeholder, autocomplete, value }) {
     return (
         <div className={styles.input}>
             <label>{label}</label>
@@ -10,11 +10,12 @@ function Input({ label, icon, onInput, type, placeholder, title, autocomplete })
             </div>
             <input
                 autoComplete={autocomplete}
-                onInput={onInput}
+                onChange={onChange}
                 type={type}
                 placeholder={placeholder}
-                alt={title}
-                title={title}
+                alt={placeholder}
+                title={placeholder}
+                value={value}
             />
         </div>
     )

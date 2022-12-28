@@ -1,7 +1,7 @@
 // styles
 import styles from "./Form.module.scss"
 // react hooks
-import { useState } from "react"
+import { FormEvent, useState } from "react"
 
 // components
 import SignIn from "./SignIn/SignIn"
@@ -12,15 +12,11 @@ import Footer from "./Footer/Footer"
 function Form({ state, setState }) {
     const [statusLogin, setStatusLogin] = useState<Boolean>(false)
     const [path, setPath] = useState<String>('/')
-    const [typeForm, setTypeForm] = useState<String>('/')
 
-    console.log(typeForm)
-
-    function verifyIfCanSubmit(e: any) {
+    function verifyIfCanSubmit(e: FormEvent) {
         // se dados estiverem ok
         if (statusLogin) {
-            console.log('ok')
-            if (typeForm == 'signUp') {
+            if (state == 'signUp') {
                 // se o formulario for do tipo cadastro, va para o login
                 setPath('/')
             } else {
@@ -37,14 +33,14 @@ function Form({ state, setState }) {
     return (
         <form
             className={styles.container}
-            onSubmit={e => verifyIfCanSubmit(e)}
+            onSubmit={(e) => verifyIfCanSubmit(e)}
             action={`${path}`}>
             <div className={styles.tick} />
             {state == 'signIn' ?
                 <SignIn setStatusLogin={setStatusLogin} />
                 :
                 <SignUp setStatusLogin={setStatusLogin} />}
-            <Buttons setState={setState} state={state} statusLogin={statusLogin} typeForm={typeForm} setTypeForm={setTypeForm} />
+            <Buttons setState={setState} state={state} statusLogin={statusLogin} />
             <Footer />
         </form>
     )

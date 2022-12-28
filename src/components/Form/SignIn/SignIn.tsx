@@ -28,11 +28,8 @@ function SignIn({ setStatusLogin }) {
     }
 
     function formValidation(email: String, pass: String) {
-        if (validEmail(email) && validPass(pass)) {
-            setStatusLogin(true)
-        } else {
-            setStatusLogin(false)
-        }
+        return validEmail(email) && validPass(pass) ?
+            setStatusLogin(true) : setStatusLogin(false)
     }
 
     useEffect(() => {
@@ -46,18 +43,18 @@ function SignIn({ setStatusLogin }) {
                 <Input
                     label={"Email"}
                     icon={<AiOutlineUser />}
-                    onInput={(e: any) => setEmail(e.target.value)}
+                    onChange={(e: any) => setEmail(e.target.value)}
+                    value={email}
                     type={"text"}
                     placeholder="Email"
-                    title={"Email"}
                     autocomplete="email" />
                 <Input
                     label={"Senha"}
                     icon={<RiLockPasswordLine />}
-                    onInput={(e: any) => setPass(e.target.value)}
+                    onChange={(e: any) => setPass(e.target.value)}
+                    value={pass}
                     type={"password"}
                     placeholder="Senha"
-                    title={"Senha"}
                     autocomplete="off" />
             </div>
         </div>
