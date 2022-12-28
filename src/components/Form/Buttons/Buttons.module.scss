@@ -80,7 +80,9 @@
         font-weight: 300;
         font-size: 12px;
 
-        &:hover {
+        &:hover, &:focus {
+            outline: none;
+            border: none;
             text-decoration: 1px underline var(--yellowtDescriptions);
         }
     }

@@ -1,8 +1,11 @@
-import Head from 'next/head'
-import Menu from '../../components/Menu/Menu'
-import MyNotes from '../../components/MyNotes/MyNotes'
-import AnimatedPage from "../../styles/animations/AnimatedPage"
+// styles
 import styles from "../../styles/pages/notes.module.scss"
+// next components
+import Head from 'next/head'
+// animations
+import AnimatedPage from "../../styles/animations/AnimatedPage"
+// components
+import Menu from '../../components/Menu/Menu'
 
 function Config() {
     return (

@@ -64,7 +64,7 @@ function SignUp({ setStatusLogin }) {
                     type={"text"}
                     placeholder="Username"
                     title={"Username"}
-                    autocomplete="off" />
+                    autocomplete="nickname" />
                 <Input
                     label={"Email"}
                     icon={<AiOutlineUser />}
@@ -80,7 +80,7 @@ function SignUp({ setStatusLogin }) {
                     type={"password"}
                     placeholder="Senha"
                     title={"Senha"}
-                    autocomplete="off" />
+                    autocomplete="current-password" />
                 <Input
                     label={"Confirme sua senha"}
                     icon={<RiLockPasswordLine />}

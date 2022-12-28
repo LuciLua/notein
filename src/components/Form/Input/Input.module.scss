@@ -7,8 +7,11 @@
     flex-direction: column;
 
     gap: 5px;
+    margin: 1px;
 
     position: relative;
+
+    animation: toDownAnimation 0.3s linear;
 
     label {
         color: var(--grayDarkLight);
@@ -38,11 +41,30 @@
         &:focus {
             outline: 1px solid var(--yellow75opacity);
         }
-        &:not(:focus){
+
+        &:not(:focus) {
             -webkit-text-fill-color: var(--grayDarkMedium);
         }
-        &:not(:placeholder-shown){
+
+        &:not(:placeholder-shown) {
             -webkit-text-fill-color: var(--write);
         }
+    }
+}
+
+
+@keyframes toDownAnimation {
+    0% {
+        opacity: 0%;
+        top: -10px;
+    }
+
+    50%{
+        opacity: 20%;
+    }
+
+    100% {
+        opacity: 100%;
+        top: 0;
     }
 }
