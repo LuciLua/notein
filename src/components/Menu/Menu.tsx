@@ -1,11 +1,15 @@
-import Link from 'next/link'
+// styles
 import styles from './Menu.module.scss'
+// icons
 import { BiExit } from 'react-icons/bi'
 import { MdOutlineManageAccounts } from 'react-icons/md'
 import { TbNotes } from "react-icons/tb"
-
+// react hooks
 import { useEffect, useRef } from 'react'
+// utils
 import selectMenuOption from '../../utils/activeElements'
+// next components
+import Link from 'next/link'
 
 function Menu() {
 
@@ -15,14 +19,14 @@ function Menu() {
     const menuConfig = useRef<HTMLAnchorElement>(null)
     const menuExit = useRef<HTMLAnchorElement>(null)
 
-    function hiddenMenuSlowly(e:any) {
+    function hiddenMenuSlowly(e: any) {
         e.preventDefault()
         c_menu.current.style.transition = '0.3s'
         c_menu.current.style.left = '-90px'
         setTimeout(() => {
             window.location.replace('/')
         }, 1)
-        
+
     }
 
     useEffect(() => {

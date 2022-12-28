@@ -1,43 +1,40 @@
-import styles from "../Inputs.module.scss"
+// styles
+import styles from "../Form.module.scss"
+// icons
 import { AiOutlineUser } from "react-icons/ai"
 import { RiLockPasswordLine } from "react-icons/ri"
+// React Hooks
 import { useEffect, useState } from "react"
+// Components
 import Header from "../Header/Header"
+import Input from "../Input/Input"
+// types
+import { UserProps } from "../../../types/UserProps"
 
 function SignUp({ setStatusLogin }) {
-
 
     const [username, setUsername] = useState<String>('')
     const [email, setEmail] = useState<String>('')
     const [pass, setPass] = useState<String>('')
     const [passConfirm, setPassConfirm] = useState<String>('')
 
-
     function validUsername(username: any) {
-        var regexObj = new RegExp('user+_+[a-zA-Z0-9]+_+[0-9]')
-        if (regexObj.test(username) && username.length >= 5) {
-            return true
-        } else return false
+        var regexUsername = new RegExp('[a-zA-Z0-9]')
+        return regexUsername.test(username) && username.length >= 5 ? true : false
     }
 
     function validEmail(email: any) {
-        var regexObj = new RegExp('[a-zA-Z0-9-_!.]+@+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]')
-        if (regexObj.test(email)) return true
-        else return false
+        var regexEmail = new RegExp('[a-zA-Z0-9-_!.]+@+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]')
+        return regexEmail.test(email) ? true : false
     }
 
     function validPass(pass: any) {
-        var regexObj = new RegExp('[a-zA-Z0-9]')
-        if (regexObj.test(pass) && pass.length >= 6) {
-            return true
-        } else {
-            return false
-        }
+        var regexPass = new RegExp('[a-zA-Z0-9]')
+        return regexPass.test(pass) && pass.length >= 6 ? true : false
     }
 
     function validPassConfirm(passConfirm: any) {
-        if (passConfirm == pass) return true
-        else return false
+        return passConfirm == pass ? true : false
     }
 
 
@@ -57,62 +54,43 @@ function SignUp({ setStatusLogin }) {
     }, [username, email, pass, passConfirm])
 
     return (
-        <>
+        <div className={styles.c_signUp}>
             <Header title={'Create your account'} description={'Create now'} />
             <div className={styles.inputs}>
-                <div className={styles.input}>
-                    <label htmlFor="username">Username</label>
-                    <div className={styles.icon}>
-                        <AiOutlineUser />
-                    </div>
-                    <input
-                        autoComplete="off"
-                        onInput={(e: any) => setUsername(e.target.value)}
-                        id="username"
-                        type="text"
-                        placeholder="Username"
-                        alt="user_username_favNumber | ex.: user_luci_01"
-                        title="user_username_favNumber | ex.: user_luci_01"
-                    />
-                </div>
-                <div className={styles.input}>
-                    <label htmlFor="email">Email</label>
-                    <div className={styles.icon}>
-                        <AiOutlineUser />
-                    </div>
-                    <input
-                        autoComplete="off"
-                        onInput={(e: any) => setEmail(e.target.value)}
-                        id="email"
-                        type="text"
-                        placeholder="Email" />
-                </div>
-                <div className={styles.input}>
-                    <label htmlFor="pass">Senha</label>
-                    <div className={styles.icon}>
-                        <RiLockPasswordLine />
-                    </div>
-                    <input
-                        id="pass"
-                        type="password"
-                        placeholder="Senha"
-                        onInput={(e: any) => setPass(e.target.value)}
-                    />
-                </div>
-                <div className={styles.input}>
-                    <label htmlFor="passConfirm">Confirme sua senha</label>
-                    <div className={styles.icon}>
-                        <RiLockPasswordLine />
-                    </div>
-                    <input
-                        id="passConfirm"
-                        type="password"
-                        placeholder="Senha"
-                        onInput={(e: any) => setPassConfirm(e.target.value)}
-                    />
-                </div>
+                <Input
+                    label={"Username"}
+                    icon={<AiOutlineUser />}
+                    onInput={(e: any) => setUsername(e.target.value)}
+                    type={"text"}
+                    placeholder="Username"
+                    title={"Username"}
+                    autocomplete="off" />
+                <Input
+                    label={"Email"}
+                    icon={<AiOutlineUser />}
+                    onInput={(e: any) => setEmail(e.target.value)}
+                    type={"text"}
+                    placeholder="Email"
+                    title={"Email"}
+                    autocomplete="off" />
+                <Input
+                    label={"Senha"}
+                    icon={<RiLockPasswordLine />}
+                    onInput={(e: any) => setPass(e.target.value)}
+                    type={"password"}
+                    placeholder="Senha"
+                    title={"Senha"}
+                    autocomplete="off" />
+                <Input
+                    label={"Confirme sua senha"}
+                    icon={<RiLockPasswordLine />}
+                    onInput={(e: any) => setPassConfirm(e.target.value)}
+                    type={"password"}
+                    placeholder="Senha"
+                    title={"Senha"}
+                    autocomplete="off" />
             </div>
-        </>
+        </div>
     )
 }
 

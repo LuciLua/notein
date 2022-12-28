@@ -1,8 +1,11 @@
-import Head from 'next/head'
-// import AnimatedElementFade from "../styles/animations/AnimatedElementFade"
-import AnimatedPage from "../styles/animations/AnimatedPage"
+// styles
 import styles from "../styles/pages/home.module.scss"
+// animations
+import AnimatedPage from "../styles/animations/AnimatedPage"
+// components
 import Form from '../components/Form/Form'
+// next components
+import Head from 'next/head'
 
 function Home({ id }: { id: number }) {
     return (

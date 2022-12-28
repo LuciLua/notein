@@ -1,6 +1,9 @@
-import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+// styles
 import styles from "./Buttons.module.scss"
+// react hooks
+import { useEffect, useRef, useState } from "react"
+// next components
+import Link from "next/link"
 
 function Buttons({ statusLogin, typeForm, setTypeForm }) {
 

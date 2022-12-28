@@ -1,21 +1,22 @@
+// styles
+import styles from "./Form.module.scss"
+// react hooks
 import { useState } from "react"
 
-import styles from "./Form.module.scss"
-import Footer from "./Footer/Footer"
-import Buttons from "./Buttons/Buttons"
-
+// components
 import SignIn from "./SignIn/SignIn"
 import SignUp from "./SignUp/SignUp"
+import Buttons from "./Buttons/Buttons"
+import Footer from "./Footer/Footer"
 
 function Form({ state }) {
     const [statusLogin, setStatusLogin] = useState<Boolean>(false)
     const [path, setPath] = useState<String>('/')
-
     const [typeForm, setTypeForm] = useState<String>('/')
 
     console.log(typeForm)
 
-    function verifyIfCanSubmit(e) {
+    function verifyIfCanSubmit(e: any) {
         // se dados estiverem ok
         if (statusLogin) {
             console.log('ok')

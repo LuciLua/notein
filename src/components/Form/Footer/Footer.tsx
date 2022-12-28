@@ -1,7 +1,10 @@
+// styles
 import styles from "./Footer.module.scss"
+// icons
 import { AiFillGithub } from "react-icons/ai"
 import { FaReact } from "react-icons/fa"
 import { SiNextdotjs, SiTypescript } from "react-icons/si"
+// next components
 import Link from "next/link"
 
 function Footer(){

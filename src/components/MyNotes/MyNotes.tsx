@@ -1,5 +1,7 @@
-import { MdAdd } from 'react-icons/md'
+// styles
 import styles from './MyNotes.module.scss'
+// icons
+import { MdAdd } from 'react-icons/md'
 
 function MyNotes() {
     return (

@@ -14,7 +14,26 @@
 
     box-shadow: 5px 10px 12px rgba(0, 0, 0, 0.208);
 
-    .tick{
+    .c_signIn,
+    .c_signUp {
+        .inputs {
+            display: flex;
+            flex-direction: column;
+
+            margin-bottom: auto;
+
+            width: 100%;
+            height: 100%;
+
+            padding: 0 40px;
+
+            position: relative;
+
+            gap: 15px;
+        }
+    }
+
+    .tick {
         background-color: #a88a63d2;
         width: 70px;
         height: 18px;
