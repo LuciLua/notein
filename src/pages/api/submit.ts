@@ -8,10 +8,11 @@ async function connectToDatabase(uri: string) {
     return cacheDb;
   }
 
-  const client = await MongoClient.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  const client = await MongoClient.connect(uri,{}) 
+
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+  // );
 
   const dbName = url.parse(uri).pathname.substring(1);
   // substring pula 1 caractere e pega o q vem depois
