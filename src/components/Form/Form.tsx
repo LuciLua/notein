@@ -1,8 +1,9 @@
 // styles
 import styles from "./Form.module.scss"
 // react hooks
-import { FormEvent, useState } from "react"
-
+import { FormEvent, useEffect, useState } from "react"
+// axios
+import axios from "axios"
 // components
 import SignIn from "./SignIn/SignIn"
 import SignUp from "./SignUp/SignUp"
@@ -12,16 +13,25 @@ import Footer from "./Footer/Footer"
 function Form({ state, setState }) {
     const [statusLogin, setStatusLogin] = useState<Boolean>(false)
     const [path, setPath] = useState<String>('/')
+    const [data, setData] = useState({})
 
     function verifyIfCanSubmit(e: FormEvent) {
         // se dados estiverem ok
         if (statusLogin) {
+
+            // let responseFromAxios = axios.get("/api/submit")
+            //     .then(resp => resp.data)
+            //     .then(resp => JSON.stringify(resp))
+            //     .catch(err => console.log("err: ", err))
+
             if (state == 'signUp') {
                 // se o formulario for do tipo cadastro, va para o login
+                axios.post("/api/submit", data)
                 setPath('/')
             } else {
                 // se o formulario for do tipo login, va para home
-                setPath('/logged')
+                axios.post("/api/submit", data)
+                setPath('/logged/')
             }
         } else {
             console.log('Not yet')
@@ -29,6 +39,12 @@ function Form({ state, setState }) {
         }
     }
 
+    // useEffect(() => {
+    //     let responseFromAxios = axios.get("/api/submit")
+    //         .then(resp => resp.data)
+    //         .then(resp => resp.message)
+    //     console.log(responseFromAxios)
+    // })
 
     return (
         <form
@@ -37,9 +53,9 @@ function Form({ state, setState }) {
             action={`${path}`}>
             <div className={styles.tick} />
             {state == 'signIn' ?
-                <SignIn setStatusLogin={setStatusLogin} />
+                <SignIn setData={setData} setStatusLogin={setStatusLogin} />
                 :
-                <SignUp setStatusLogin={setStatusLogin} />}
+                <SignUp setData={setData} setStatusLogin={setStatusLogin} />}
             <Buttons setState={setState} state={state} statusLogin={statusLogin} />
             <Footer />
         </form>

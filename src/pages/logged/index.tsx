@@ -8,8 +8,17 @@ import AnimatedPage from "../../styles/animations/AnimatedPage"
 // components
 import Menu from "../../components/Menu/Menu"
 import MyNotes from "../../components/MyNotes/MyNotes"
+import { useEffect } from "react"
 
 function Logged() {
+
+    useEffect(() => {
+        if (localStorage !== undefined) {
+            const usuario = JSON.parse(localStorage.getItem('user'))
+            console.log(usuario)
+        }
+    })
+
     return (
         <div className={styles.container}>
             <Head>

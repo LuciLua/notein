@@ -7,8 +7,6 @@ import Link from "next/link"
 
 function Buttons({ statusLogin, state, setState }) {
 
-    const [data, setData] = useState({})
-
     const c_btn = useRef<any>(null)
     const c_btn_span = useRef<any>(null)
     const c_btn_create_span = useRef<any>(null)

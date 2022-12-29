@@ -11,11 +11,12 @@ import Input from "../Input/Input"
 // types
 import { UserProps } from "../../../types/UserProps"
 
-function SignIn({ setStatusLogin }) {
+function SignIn({ setStatusLogin, setData }) {
 
 
     const [email, setEmail] = useState<String>('')
     const [pass, setPass] = useState<String>('')
+
 
     function validEmail(email: any) {
         var regexEmail = new RegExp('[a-zA-Z0-9-_!.]+@+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]')
@@ -28,8 +29,12 @@ function SignIn({ setStatusLogin }) {
     }
 
     function formValidation(email: String, pass: String) {
-        return validEmail(email) && validPass(pass) ?
-            setStatusLogin(true) : setStatusLogin(false)
+        if (validEmail(email) && validPass(pass)) {
+            setStatusLogin(true)
+            setData({ email, pass })
+        } else {
+            setStatusLogin(false)
+        }
     }
 
     useEffect(() => {

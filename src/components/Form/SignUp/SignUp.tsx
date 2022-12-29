@@ -4,15 +4,14 @@ import styles from "../Form.module.scss"
 import { AiOutlineUser } from "react-icons/ai"
 import { RiLockPasswordLine } from "react-icons/ri"
 // React Hooks
-import { FormEvent, InputHTMLAttributes, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 // Components
 import Header from "../Header/Header"
 import Input from "../Input/Input"
 // types
 import { UserProps } from "../../../types/UserProps"
-import EventEmitter from "events"
 
-function SignUp({ setStatusLogin }) {
+function SignUp({ setStatusLogin, setData }) {
 
     const [username, setUsername] = useState<String>('')
     const [email, setEmail] = useState<String>('')
@@ -39,14 +38,16 @@ function SignUp({ setStatusLogin }) {
     }
 
     function formValidation(username: String, email: String, pass: String, passConfirm: String) {
-        return validUsername(username) &&
+        if (validUsername(username) &&
             validEmail(email) &&
             validPass(pass) &&
-            validPassConfirm(passConfirm)
-            ?
+            validPassConfirm(passConfirm)) {
+            setData({ username, email, pass })
             setStatusLogin(true)
-            :
+        }
+        else {
             setStatusLogin(false)
+        }
     }
 
     useEffect(() => {
