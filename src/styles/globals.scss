@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: 0.1s;
 }
 
 body {
@@ -20,17 +21,15 @@ body {
     overflow-x: hidden;
 
     background-color: var(--primaryColor);
-
 }
-
 
 :root {
     --menuWidth: 50px;
 }
 
-// @import "themes/light.scss";
-@import "themes/dark.scss";
-
 .active {
     color: #ff9f19;
 }
+
+// @import 'themes/dark.scss';
+// @import 'themes/light.scss';
