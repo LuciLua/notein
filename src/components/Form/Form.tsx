@@ -12,39 +12,44 @@ import Footer from "./Footer/Footer"
 
 function Form({ state, setState }) {
     const [statusLogin, setStatusLogin] = useState<Boolean>(false)
-    const [path, setPath] = useState<String>('/')
     const [data, setData] = useState({})
+    const [path, setPath] = useState<String>('/')
 
-    function verifyIfCanSubmit(e: FormEvent) {
-        // se dados estiverem ok
+    useEffect(() => {
+        if (path == '/logged/') {
+            window.location.pathname = `/logged/`
+        }
+    }, [path])
+
+    async function verifyIfCanSubmit(e: FormEvent) {
+        e.preventDefault()
         if (statusLogin) {
+            if (state == 'signIn') {
+                let verifyInMongo = await axios.post("/api/access", { data: data })
+                    .then(resp => {
+                        console.log(resp.data)
+                        return resp.data
+                    })
+                    .catch(err => console.log(err))
 
-            // let responseFromAxios = axios.get("/api/submit")
-            //     .then(resp => resp.data)
-            //     .then(resp => JSON.stringify(resp))
-            //     .catch(err => console.log("err: ", err))
+                if (verifyInMongo == "OK") {
+                    console.log("You have a account");
+                    setPath('/logged/')
+                    // e.stopPropagation()
+                } else {
+                    alert('create your accont before')
+                    setPath('/')
+                    setState('signUp')
+                }
 
-            if (state == 'signUp') {
-                // se o formulario for do tipo cadastro, va para o login
-                axios.post("/api/submit", data)
-                setPath('/')
             } else {
-                // se o formulario for do tipo login, va para home
                 axios.post("/api/submit", data)
-                setPath('/logged/')
+                setState('signIn')
             }
         } else {
             console.log('Not yet')
-            e.preventDefault()
         }
     }
-
-    // useEffect(() => {
-    //     let responseFromAxios = axios.get("/api/submit")
-    //         .then(resp => resp.data)
-    //         .then(resp => resp.message)
-    //     console.log(responseFromAxios)
-    // })
 
     return (
         <form
