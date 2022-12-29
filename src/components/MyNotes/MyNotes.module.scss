@@ -22,7 +22,7 @@
 
             button {
                 border-radius: 4px;
-                background-color: #ed9517;
+                background-color: var(--primaryColorPastelDark25opacity);
                 border: none;
                 width: 35px;
                 height: 35px;
@@ -37,7 +37,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    color: #945d10;
+                    color: var(--primaryColorPastelDark);
                     font-size: 25px;
                     font-family: Poppins;
                 }

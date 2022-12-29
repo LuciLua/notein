@@ -5,10 +5,9 @@ function Input({ label, icon, onChange, type, placeholder, autocomplete, value }
     return (
         <div className={styles.input}>
             <label>{label}</label>
-            <div className={styles.icon}>
-                {icon}
-            </div>
+            <div className={styles.icon}>{icon}</div>
             <input
+                required
                 autoComplete={autocomplete}
                 onChange={onChange}
                 type={type}

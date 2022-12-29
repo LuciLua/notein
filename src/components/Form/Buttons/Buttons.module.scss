@@ -14,7 +14,7 @@
     margin-bottom: auto;
 
     .c_btn {
-        background-color: #d9ac3954;
+        background-color: var(--primaryColorPastelDark25opacity);
         user-select: none;
 
         border: none;
@@ -30,7 +30,8 @@
 
         outline: none;
 
-        color: var(--grayDarkPrimary90opacity);
+        color: rgba(0, 0, 0, 0.552);
+
         text-decoration: none;
         font-weight: 600;
         font-family: Poppins;
@@ -42,18 +43,16 @@
         user-select: none;
         pointer-events: none;
 
-
-
         &.active {
-            background-color: var(--yellowPrimary);
+            background-color: var(--primaryColor);
             color: #1e1e1e;
             cursor: pointer;
             user-select: none;
             pointer-events: all;
 
             &:focus {
-                background-color: var(--yellowPastel);
-                outline: 1px solid var(--yellowPrimary);
+                background-color: var(--primaryColorPastel);
+                outline: 1px solid var(--primaryColor);
             }
 
             a {
@@ -69,21 +68,22 @@
         }
     }
 
-    .c_btn_create {
+    .c_btn_createOrLogin {
         cursor: pointer;
         border: none;
         margin: 15px 0 30px 0;
-        
+
         background-color: transparent;
-        color: var(--yellowtDescriptions);
+        color: var(--primaryColorPastelDark);
 
         font-weight: 300;
         font-size: 12px;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             outline: none;
             border: none;
-            text-decoration: 1px underline var(--yellowtDescriptions);
+            text-decoration: 1px underline var(--primaryColorPastelDark);
         }
     }
 }

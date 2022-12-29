@@ -26,12 +26,9 @@ function Menu() {
         setTimeout(() => {
             window.location.replace('/')
         }, 1)
-
     }
 
     useEffect(() => {
-
-
         var lis = document.querySelectorAll(`.${styles.c_menu_list__item__link}`)
 
         for (let i = 0; i < lis.length; i++) {

@@ -10,35 +10,19 @@ import Header from "../Header/Header"
 import Input from "../Input/Input"
 // types
 import { UserProps } from "../../../types/UserProps"
+// utils
+import { FormValidation } from "../../../utils/formValidation"
 
-function SignIn({ setStatusLogin, setData }) {
-
+function SignIn({ setAllowLoginOrCreate, setData }) {
 
     const [email, setEmail] = useState<String>('')
     const [pass, setPass] = useState<String>('')
 
-
-    function validEmail(email: any) {
-        var regexEmail = new RegExp('[a-zA-Z0-9-_!.]+@+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]')
-        return regexEmail.test(email) ? true : false
-    }
-
-    function validPass(pass: any) {
-        var regexPass = new RegExp('[a-zA-Z0-9]')
-        return regexPass.test(pass) && pass.length >= 6 ? true : false
-    }
-
-    function formValidation(email: String, pass: String) {
-        if (validEmail(email) && validPass(pass)) {
-            setStatusLogin(true)
-            setData({ email, pass })
-        } else {
-            setStatusLogin(false)
-        }
-    }
-
     useEffect(() => {
-        formValidation(email, pass)
+        if (FormValidation('SignIn', email, pass)) {
+            setAllowLoginOrCreate(true)
+            setData({ email, pass })
+        } else setAllowLoginOrCreate(false)
     }, [email, pass])
 
     return (

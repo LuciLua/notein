@@ -10,49 +10,22 @@ import Header from "../Header/Header"
 import Input from "../Input/Input"
 // types
 import { UserProps } from "../../../types/UserProps"
+// utils
+import { FormValidation } from "../../../utils/formValidation"
 
-function SignUp({ setStatusLogin, setData }) {
+function SignUp({ setAllowLoginOrCreate, setData }) {
 
     const [username, setUsername] = useState<String>('')
     const [email, setEmail] = useState<String>('')
     const [pass, setPass] = useState<String>('')
     const [passConfirm, setPassConfirm] = useState<String>('')
 
-    function validUsername(username: any) {
-        var regexUsername = new RegExp('[a-zA-Z0-9]')
-        return regexUsername.test(username) && username.length >= 5 ? true : false
-    }
-
-    function validEmail(email: any) {
-        var regexEmail = new RegExp('[a-zA-Z0-9-_!.]+@+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]')
-        return regexEmail.test(email) ? true : false
-    }
-
-    function validPass(pass: any) {
-        var regexPass = new RegExp('[a-zA-Z0-9]')
-        return regexPass.test(pass) && pass.length >= 6 ? true : false
-    }
-
-    function validPassConfirm(passConfirm: any) {
-        return passConfirm == pass ? true : false
-    }
-
-    function formValidation(username: String, email: String, pass: String, passConfirm: String) {
-        if (validUsername(username) &&
-            validEmail(email) &&
-            validPass(pass) &&
-            validPassConfirm(passConfirm)) {
-            setData({ username, email, pass })
-            setStatusLogin(true)
-        }
-        else {
-            setStatusLogin(false)
-        }
-    }
-
     useEffect(() => {
-        formValidation(username, email, pass, passConfirm)
-    }, [username, email, pass, passConfirm])
+        if (FormValidation('SignUp', email, pass, username, passConfirm)) {
+            setAllowLoginOrCreate(true)
+            setData({ username, email, pass })
+        } else setAllowLoginOrCreate(false)
+    }, [email, pass, username, passConfirm])
 
     return (
         <div className={styles.c_signUp}>

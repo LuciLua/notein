@@ -1,5 +1,5 @@
 .footer {
-    background-color: var(--yellowLightPrimary);
+    background-color: var(--primaryColorVivid);
     height: 24px;
     width: 100%;
 
@@ -19,7 +19,7 @@
             align-items: center;
 
             list-style: none;
-            color: var(--grayDarkPrimary);
+            color: var(--secondaryColor);
 
             font-size: 1.1em;
 
@@ -30,7 +30,7 @@
 
             &:hover,
             &:focus {
-                outline: 1px solid var(--grayDarkPrimary);
+                outline: 1px solid var(--secondaryColor);
                 border: none;
             }
 

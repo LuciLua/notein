@@ -14,7 +14,7 @@
     animation: toDownAnimation 0.3s linear;
 
     label {
-        color: var(--grayDarkLight);
+        color: var(--labelColor);
         font-size: 13px;
         font-weight: 300;
         margin-bottom: 2px;
@@ -22,32 +22,38 @@
 
     .icon {
         position: absolute;
-        color: var(--grayDarkMedium);
+        color: var(--labelColor);
         top: 37px;
         left: 5px;
     }
 
     input {
-        border: 1px solid var(--grayDarkMedium);
-        color: var(--write);
+        border: 1px solid var(--labelColor);
+        color: var(--h1Color);
         padding: 10px 28px;
         border-radius: 4px;
 
         background-color: transparent;
 
-        box-shadow: 0 0 0px 1000px var(--grayDarkPrimary) inset;
-        -webkit-box-shadow: 0 0 0px 1000px var(--grayDarkPrimary) inset;
+        box-shadow: 0 0 0px 1000px var(--secondaryColor) inset;
+        -webkit-box-shadow: 0 0 0px 1000px var(--secondaryColor) inset;
+        -webkit-text-fill-color: var(--labelColor);
 
-        &:focus {
-            outline: 1px solid var(--yellow75opacity);
+        &:focus{
+            border: 1px solid var(--primaryColor);
+            outline: none;
+
+            box-shadow: 0 0 0px 1000px var(--secondaryColor) inset;
+            -webkit-box-shadow: 0 0 0px 1000px var(--secondaryColor) inset;
+            -webkit-text-fill-color: var(--labelColor);
         }
 
         &:not(:focus) {
-            -webkit-text-fill-color: var(--grayDarkMedium);
+            -webkit-text-fill-color: var(--labelColor);
         }
 
         &:not(:placeholder-shown) {
-            -webkit-text-fill-color: var(--write);
+            -webkit-text-fill-color: var(--h1Color);
         }
     }
 }
@@ -59,7 +65,7 @@
         top: -10px;
     }
 
-    50%{
+    50% {
         opacity: 20%;
     }
 

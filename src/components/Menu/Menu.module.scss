@@ -1,5 +1,5 @@
 .c_menu {
-    background-color: #1a1c21;
+    background-color: var(--secondaryColor);
 
     width: var(--menuWidth);
     height: calc(100vh);
@@ -11,7 +11,7 @@
     align-items: center;
     flex-direction: column;
 
-    box-shadow: 0 0 5px #050506;
+    box-shadow: 0 0 10px var(--primaryColorPastelDark25opacity);
 
     z-index: 10;
 
@@ -42,7 +42,7 @@
 
                 font-size: 25px;
 
-                color: #a1d2f370;
+                color: var(--h2Color);
 
                 margin: 30px;
 
@@ -53,7 +53,7 @@
 
                 &:hover {
                     transition: 0.3s;
-                    color: #ff9f19;
+                    color: var(--primaryColorPastelDark);
                 }
             }
 
