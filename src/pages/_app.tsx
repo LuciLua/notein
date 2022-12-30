@@ -1,6 +1,6 @@
 // styles
 import { useEffect, useState } from 'react'
-import ToggleTheme from '../components/ToggleTheme/ToggleTheme'
+import ToggleTheme from '../components/toggleTheme/ToggleTheme'
 import '../styles/globals.scss'
 import StyleDark from "../styles/themes/dark"
 import StyleLight from "../styles/themes/light"
