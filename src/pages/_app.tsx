@@ -1,17 +1,17 @@
 // styles
 import { useEffect, useState } from 'react'
-import ToggleTheme from '../components/toggleTheme/ToggleTheme'
+import ToggleTheme from '../components/ToggleTheme/ToggleTheme'
 import '../styles/globals.scss'
 import StyleDark from "../styles/themes/dark"
 import StyleLight from "../styles/themes/light"
 
 function App({ Component, pageProps }) {
-    const [theme, setTheme] = useState('dark')
+
+    const [theme, setTheme] = useState('light')
 
     function onClickToggle() {
         if (theme == 'dark') {
             setTheme('light')
-
         } else {
             setTheme('dark')
         }
@@ -19,7 +19,7 @@ function App({ Component, pageProps }) {
 
     return (
         <>
-            {theme == 'dark' ? <StyleLight/> : <StyleDark/>}
+            {theme == 'light' ? <StyleDark /> : <StyleLight />}
             <ToggleTheme onClick={onClickToggle} theme={theme} />
             <Component {...pageProps} />
         </>

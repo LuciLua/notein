@@ -29,7 +29,7 @@ function Menu() {
     }
 
     useEffect(() => {
-        var lis = document.querySelectorAll(`.${styles.c_menu_list__item__link}`)
+        var lis = document.querySelectorAll(`.${styles.c_menu_list_item_link}`)
 
         for (let i = 0; i < lis.length; i++) {
             if (window.location.pathname == `/logged/notes` || window.location.pathname == `/logged`) {
@@ -43,20 +43,47 @@ function Menu() {
 
     return (
         <div className={styles.c_menu} ref={c_menu}>
+            <ul className={styles.c_menu_logo}>
+                <li className={styles.c_menu_list_item}>
+                    <Link ref={menuNotes} href={'/logged/notes'} className={styles.c_menu_list_item_link}>
+                        <span className={styles.c_menu_logo_icon}>
+                            <TbNotes />
+                        </span>
+                        <span className={styles.c_menu_logo_span}>
+                            NoteIn
+                        </span>
+                    </Link>
+                </li>
+            </ul>
             <ul className={styles.c_menu_list}>
-                <li className={styles.c_menu_list__item}>
-                    <Link ref={menuNotes} href={'/logged/notes'} className={styles.c_menu_list__item__link}>
-                        <TbNotes />
+                <li className={styles.c_menu_list_item}>
+                    <Link ref={menuNotes} href={'/logged/notes'} className={styles.c_menu_list_item_link}>
+                        <span className={styles.c_menu_list_item_link_span}>
+                            Notes
+                        </span>
+                        <span className={styles.c_menu_list_item_link_icon}>
+                            <TbNotes />
+                        </span>
                     </Link>
                 </li>
-                <li className={styles.c_menu_list__item}>
-                    <Link ref={menuConfig} href={'/logged/config'} className={styles.c_menu_list__item__link}>
-                        <MdOutlineManageAccounts />
+                <li className={styles.c_menu_list_item}>
+                    <Link ref={menuConfig} href={'/logged/config'} className={styles.c_menu_list_item_link}>
+                        <span className={styles.c_menu_list_item_link_span}>
+                            My Account
+                        </span>
+                        <span className={styles.c_menu_list_item_link_icon}>
+                            <MdOutlineManageAccounts />
+                        </span>
                     </Link>
                 </li>
-                <li className={styles.c_menu_list__item}>
-                    <Link ref={menuExit} onClick={(e) => { hiddenMenuSlowly(e) }} href={'/'} className={styles.c_menu_list__item__link}>
-                        <BiExit />
+                <li className={styles.c_menu_list_item}>
+                    <Link ref={menuExit} onClick={(e) => { hiddenMenuSlowly(e) }} href={'/'} className={styles.c_menu_list_item_link}>
+                        <span className={styles.c_menu_list_item_link_span}>
+                            Exit
+                        </span>
+                        <span className={styles.c_menu_list_item_link_icon}>
+                            <BiExit />
+                        </span>
                     </Link>
                 </li>
             </ul>

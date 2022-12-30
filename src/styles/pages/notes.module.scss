@@ -16,3 +16,11 @@
     padding: 30px;
 
 }
+
+@media (max-width: 450px) {
+    .container {
+        width: calc(100vw - var(--menuWidthMobile));
+        margin-left: var(--menuWidthMobile);
+
+    }
+}
