@@ -2,14 +2,12 @@
 import styles from "../Form.module.scss"
 // icons
 import { AiOutlineUser } from "react-icons/ai"
+import { MdOutlineEmail } from "react-icons/md"
 import { RiLockPasswordLine } from "react-icons/ri"
 // React Hooks
 import { useEffect, useState } from "react"
 // Components
-import Header from "../Header/Header"
 import Input from "../Input/Input"
-// types
-import { UserProps } from "../../../types/UserProps"
 // utils
 import { FormValidation } from "../../../utils/formValidation"
 
@@ -40,7 +38,7 @@ function SignUp({ setAllowLoginOrCreate, setData }) {
                     autocomplete="nickname" />
                 <Input
                     label={"Email"}
-                    icon={<AiOutlineUser />}
+                    icon={<MdOutlineEmail />}
                     onChange={(e: any) => setEmail(e.target.value)}
                     type={"text"}
                     placeholder="Email"

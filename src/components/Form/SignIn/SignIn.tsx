@@ -1,15 +1,12 @@
 // styles
 import styles from "../Form.module.scss"
 // icons
-import { AiOutlineUser } from "react-icons/ai"
 import { RiLockPasswordLine } from "react-icons/ri"
+import { MdOutlineEmail } from "react-icons/md"
 // react hooks
 import React, { useEffect, useState } from "react"
 // components
-import Header from "../Header/Header"
 import Input from "../Input/Input"
-// types
-import { UserProps } from "../../../types/UserProps"
 // utils
 import { FormValidation } from "../../../utils/formValidation"
 
@@ -30,7 +27,7 @@ function SignIn({ setAllowLoginOrCreate, setData }) {
             <div className={styles.inputs}>
                 <Input
                     label={"Email"}
-                    icon={<AiOutlineUser />}
+                    icon={<MdOutlineEmail />}
                     onChange={(e: any) => setEmail(e.target.value)}
                     value={email}
                     type={"text"}

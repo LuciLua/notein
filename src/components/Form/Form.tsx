@@ -2,8 +2,6 @@
 import styles from "./Form.module.scss"
 // react hooks
 import { useEffect, useState } from "react"
-// axios
-import axios from "axios"
 // components
 import Buttons from "./Buttons/Buttons"
 import Footer from "./Footer/Footer"
@@ -25,12 +23,12 @@ function Form({ state, setState }) {
 
     return (
         <form
-            className={styles.container}
-            onSubmit={(e) =>
-                verifyIfCanSubmit(e, allowLoginOrCreate, state, setState, data, setPath)}
+        className={styles.container}
+        onSubmit={(e) =>
+            verifyIfCanSubmit(e, allowLoginOrCreate, state, setState, data, setPath)}
             action={`${path}`}>
-            <Header state={state} />
             <div className={styles.tick} />
+            <Header state={state} />
             <CallSignInOrSignUp state={state} setData={setData} setAllowLoginOrCreate={setAllowLoginOrCreate} />
             <Buttons setState={setState} state={state} allowLoginOrCreate={allowLoginOrCreate} />
             <Footer />
