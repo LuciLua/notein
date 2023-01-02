@@ -2,7 +2,7 @@
 import styles from "./Buttons.module.scss"
 // react hooks
 import { useEffect, useRef } from "react"
-import { verifyFormAndChangeDOM } from "../../../utils/verifyFormAndChangeDOM"
+import { verifyFormAndChangeDOMButtons } from "../../../utils/verifyFormAndChangeDOM"
 
 function Buttons({ allowLoginOrCreate, state, setState }) {
 
@@ -10,7 +10,7 @@ function Buttons({ allowLoginOrCreate, state, setState }) {
     const c_btn_createOrLogin = useRef<any>(null)
 
     useEffect(() => {
-        verifyFormAndChangeDOM(state, c_btn, c_btn_createOrLogin, allowLoginOrCreate, styles)
+        verifyFormAndChangeDOMButtons(state, c_btn, c_btn_createOrLogin, allowLoginOrCreate, styles)
     })
 
     return (
@@ -21,7 +21,6 @@ function Buttons({ allowLoginOrCreate, state, setState }) {
                 disabled={!allowLoginOrCreate}
                 type="submit">
             </button>
-
             <button
                 ref={c_btn_createOrLogin}
                 className={styles.c_btn_createOrLogin}

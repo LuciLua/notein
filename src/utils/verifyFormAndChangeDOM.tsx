@@ -1,5 +1,4 @@
-function verifyFormAndChangeDOM(
-    state: String,
+function verifyFormAndChangeDOMButtons(state: String,
     c_btn: any, c_btn_createOrLogin: any,
     allowLoginOrCreate: Boolean,
     styles: any) {
@@ -18,7 +17,21 @@ function verifyFormAndChangeDOM(
         c_btn.current.classList = `${styles.c_btn}`
         c_btn.current.disable
     }
-
 }
 
-export { verifyFormAndChangeDOM }
+function verifyFormAndChangeDOMHeader(
+    state: String,
+    h1_title: any,
+    h2_description: any) {
+
+    if (state == 'signUp') {
+        h1_title.current.innerText = 'Create your account'
+        h2_description.current.innerText = 'Create now'
+    } else {
+        h1_title.current.innerText = 'Sign In'
+        h2_description.current.innerText = 'Access your account now'
+    }
+}
+
+
+export { verifyFormAndChangeDOMButtons, verifyFormAndChangeDOMHeader }

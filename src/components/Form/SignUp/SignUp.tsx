@@ -29,7 +29,6 @@ function SignUp({ setAllowLoginOrCreate, setData }) {
 
     return (
         <div className={styles.c_signUp}>
-            <Header title={'Create your account'} description={'Create now'} />
             <div className={styles.inputs}>
                 <Input
                     label={"Username"}

@@ -10,6 +10,7 @@ import Footer from "./Footer/Footer"
 
 import { verifyIfCanSubmit } from "../../utils/verifyIfCanSubmitForm"
 import CallSignInOrSignUp from "../../utils/callSignInOrSignUp"
+import Header from "./Header/Header"
 
 function Form({ state, setState }) {
     const [allowLoginOrCreate, setAllowLoginOrCreate] = useState<Boolean>(false)
@@ -28,6 +29,7 @@ function Form({ state, setState }) {
             onSubmit={(e) =>
                 verifyIfCanSubmit(e, allowLoginOrCreate, state, setState, data, setPath)}
             action={`${path}`}>
+            <Header state={state} />
             <div className={styles.tick} />
             <CallSignInOrSignUp state={state} setData={setData} setAllowLoginOrCreate={setAllowLoginOrCreate} />
             <Buttons setState={setState} state={state} allowLoginOrCreate={allowLoginOrCreate} />

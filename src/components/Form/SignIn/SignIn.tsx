@@ -27,7 +27,6 @@ function SignIn({ setAllowLoginOrCreate, setData }) {
 
     return (
         <div className={styles.c_signIn}>
-            <Header title={'Login'} description={'Access your account now'} />
             <div className={styles.inputs}>
                 <Input
                     label={"Email"}
