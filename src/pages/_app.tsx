@@ -10,11 +10,7 @@ function App({ Component, pageProps }) {
     const [theme, setTheme] = useState('light')
 
     function onClickToggle() {
-        if (theme == 'dark') {
-            setTheme('light')
-        } else {
-            setTheme('dark')
-        }
+        theme == 'dark' ? setTheme('light') : setTheme('dark')
     }
 
     return (

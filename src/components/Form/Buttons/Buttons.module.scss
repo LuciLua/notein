@@ -51,19 +51,24 @@
             pointer-events: all;
 
             &:focus {
-                background-color: var(--primaryColorPastel);
-                outline: 1px solid var(--primaryColor);
+                background-color: var(--buttonFocusBG);
+                outline: 1px solid var(--buttonFocusColor);
+                color: var(--buttonFocusCOLOR);
+            }
+
+            &:active{
+                background-color: var(--buttonActiveBG);
             }
 
             a {
                 user-select: none;
                 pointer-events: all;
-                color: var(--grayDarkPrimary);
+                // color: var(--grayDarkPrimary);
                 cursor: pointer;
 
-                &:hover {
-                    background-color: var(--yellowPastel);
-                }
+                // &:hover {
+                //     background-color: var(--primaryColorPastelDark25opacity);
+                // }
             }
         }
     }

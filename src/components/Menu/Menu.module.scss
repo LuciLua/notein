@@ -1,5 +1,5 @@
 .c_menu {
-    background-color: var(--secondaryColor);
+    background-color: var(--menuBG);
     width: var(--menuWidth);
 
     max-height: calc(100vh);
@@ -27,7 +27,7 @@
 
         .c_menu_logo_span,
         .c_menu_logo_icon {
-            color: var(--primaryColor);
+            color: var(--yellowDefault);
             font-size: 25px;
             font-weight: 700;
 

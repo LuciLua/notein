@@ -28,7 +28,7 @@
     }
 
     input {
-        border: 1px solid var(--labelColor);
+        border: 1px solid var(--borderNOTSelected);
         color: var(--h1Color);
         padding: 10px 28px;
         border-radius: 4px;
@@ -39,16 +39,12 @@
         -webkit-box-shadow: 0 0 0px 1000px var(--secondaryColor) inset;
         -webkit-text-fill-color: var(--labelColor);
 
-        &:focus{
-            border: 1px solid var(--primaryColor);
+        &:focus {
+            border: 1px solid var(--borderSelected);
             outline: none;
 
             box-shadow: 0 0 0px 1000px var(--secondaryColor) inset;
             -webkit-box-shadow: 0 0 0px 1000px var(--secondaryColor) inset;
-            -webkit-text-fill-color: var(--labelColor);
-        }
-
-        &:not(:focus) {
             -webkit-text-fill-color: var(--labelColor);
         }
 

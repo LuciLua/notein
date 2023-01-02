@@ -7,7 +7,7 @@ import Form from '../components/Form/Form'
 // next components
 import Head from 'next/head'
 // react hooks
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 function Home() {
     const [state, setState] = useState('signIn')
