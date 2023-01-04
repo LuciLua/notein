@@ -1,11 +1,11 @@
 // styles
-import styles from "../../styles/pages/notes.module.scss"
+import styles from "../../../styles/pages/notes.module.scss"
 // next components
 import Head from 'next/head'
 // animations
-import AnimatedPage from "../../styles/animations/AnimatedPage"
+import AnimatedPage from "../../../styles/animations/AnimatedPage"
 // components
-import Menu from '../../components/Menu/Menu'
+import Menu from '../../../components/Menu/Menu'
 
 function Config() {
     return (

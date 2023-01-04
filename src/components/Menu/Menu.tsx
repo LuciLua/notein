@@ -41,11 +41,13 @@ function Menu() {
         }
     })
 
+    const userId = 'lucilua'
+
     return (
         <div className={styles.c_menu} ref={c_menu}>
             <ul className={styles.c_menu_logo}>
                 <li className={styles.c_menu_list_item}>
-                    <Link ref={menuNotes} href={'/logged/notes'} className={styles.c_menu_list_item_link}>
+                    <Link ref={menuNotes} href={`/logged/${userId}/notes`} className={styles.c_menu_list_item_link}>
                         <span className={styles.c_menu_logo_icon}>
                             <TbNotes />
                         </span>
@@ -57,7 +59,7 @@ function Menu() {
             </ul>
             <ul className={styles.c_menu_list}>
                 <li className={styles.c_menu_list_item}>
-                    <Link ref={menuNotes} href={'/logged/notes'} className={styles.c_menu_list_item_link}>
+                    <Link ref={menuNotes} href={`/logged/${userId}/notes`} className={styles.c_menu_list_item_link}>
                         <span className={styles.c_menu_list_item_link_span}>
                             Notes
                         </span>
@@ -67,7 +69,7 @@ function Menu() {
                     </Link>
                 </li>
                 <li className={styles.c_menu_list_item}>
-                    <Link ref={menuConfig} href={'/logged/config'} className={styles.c_menu_list_item_link}>
+                    <Link ref={menuConfig} href={`/logged/${userId}/config`} className={styles.c_menu_list_item_link}>
                         <span className={styles.c_menu_list_item_link_span}>
                             My Account
                         </span>

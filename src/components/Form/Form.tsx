@@ -15,22 +15,30 @@ function Form({ state, setState }) {
     const [data, setData] = useState({})
     const [path, setPath] = useState<String>('/')
 
+    const userId = 'lucilua'
+
     useEffect(() => {
-        if (path == '/logged/') {
-            window.location.pathname = `/logged/`
+        if (path == `/logged/`) {
+            window.location.pathname = `/logged/${userId}`
         }
     }, [path])
 
     return (
         <form
-        className={styles.container}
-        onSubmit={(e) =>
-            verifyIfCanSubmit(e, allowLoginOrCreate, state, setState, data, setPath)}
+            className={styles.container}
+            onSubmit={(e) =>
+                verifyIfCanSubmit(e, allowLoginOrCreate, state, setState, data, setPath)}
             action={`${path}`}>
             <div className={styles.tick} />
             <Header state={state} />
-            <CallSignInOrSignUp state={state} setData={setData} setAllowLoginOrCreate={setAllowLoginOrCreate} />
-            <Buttons setState={setState} state={state} allowLoginOrCreate={allowLoginOrCreate} />
+            <CallSignInOrSignUp
+                state={state}
+                setData={setData}
+                setAllowLoginOrCreate={setAllowLoginOrCreate} />
+            <Buttons
+                setState={setState}
+                state={state}
+                allowLoginOrCreate={allowLoginOrCreate} />
             <Footer />
         </form>
     )

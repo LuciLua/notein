@@ -1,22 +1,18 @@
 // styles
-import styles from "../../styles/pages/notes.module.scss"
+import styles from "../../../styles/pages/notes.module.scss"
 // next compoents
 import Head from "next/head"
 // animations
-import AnimatedElementFromLeft from "../../styles/animations/AnimatedElementFromLeft"
-import AnimatedPage from "../../styles/animations/AnimatedPage"
+import AnimatedElementFromLeft from "../../../styles/animations/AnimatedElementFromLeft"
+import AnimatedPage from "../../../styles/animations/AnimatedPage"
 // components
-import Menu from "../../components/Menu/Menu"
-import MyNotes from "../../components/MyNotes/MyNotes"
+import Menu from "../../../components/Menu/Menu"
+import MyNotes from "../../../components/MyNotes/MyNotes"
 import { useEffect } from "react"
 
 function Logged() {
 
     useEffect(() => {
-        if (localStorage !== undefined) {
-            const usuario = JSON.parse(localStorage.getItem('user'))
-            console.log(usuario)
-        }
     })
 
     return (
