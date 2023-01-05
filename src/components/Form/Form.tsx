@@ -1,7 +1,7 @@
 // styles
 import styles from "./Form.module.scss"
 // react hooks
-import { useEffect, useState } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 // components
 import Buttons from "./Buttons/Buttons"
 import Footer from "./Footer/Footer"
@@ -9,17 +9,28 @@ import Footer from "./Footer/Footer"
 import { verifyIfCanSubmit } from "../../utils/verifyIfCanSubmitForm"
 import CallSignInOrSignUp from "../../utils/callSignInOrSignUp"
 import Header from "./Header/Header"
+// Context
+import { UserContext } from "../../contexts/UserContext"
+// access
+import axios from "axios"
 
 function Form({ state, setState }) {
     const [allowLoginOrCreate, setAllowLoginOrCreate] = useState<Boolean>(false)
     const [data, setData] = useState({})
     const [path, setPath] = useState<String>('/')
 
-    const userId = 'lucilua'
+    const [dataForContext, setDataForContext] = useContext<any>(UserContext);
+
+
+    async function user() {
+        const response = await axios.post('/api/utils/getUser', { data: data })
+        const responseD = await response.data
+        window.location.pathname = `/logged/${responseD._id}`
+    }
 
     useEffect(() => {
-        if (path == `/logged/`) {
-            window.location.pathname = `/logged/${userId}`
+        if (path == `logged`) {
+            user()
         }
     }, [path])
 
@@ -38,7 +49,8 @@ function Form({ state, setState }) {
             <Buttons
                 setState={setState}
                 state={state}
-                allowLoginOrCreate={allowLoginOrCreate} />
+                allowLoginOrCreate={allowLoginOrCreate}
+            />
             <Footer />
         </form>
     )

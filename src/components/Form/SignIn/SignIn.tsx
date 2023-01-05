@@ -4,21 +4,25 @@ import styles from "../Form.module.scss"
 import { RiLockPasswordLine } from "react-icons/ri"
 import { MdOutlineEmail } from "react-icons/md"
 // react hooks
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 // components
 import Input from "../Input/Input"
 // utils
 import { FormValidation } from "../../../utils/formValidation"
+import { UserContext } from "../../../contexts/UserContext"
 
 function SignIn({ setAllowLoginOrCreate, setData }) {
 
     const [email, setEmail] = useState<String>('')
     const [pass, setPass] = useState<String>('')
 
+
     useEffect(() => {
         if (FormValidation('SignIn', email, pass)) {
+
             setAllowLoginOrCreate(true)
             setData({ email, pass })
+
         } else setAllowLoginOrCreate(false)
     }, [email, pass])
 

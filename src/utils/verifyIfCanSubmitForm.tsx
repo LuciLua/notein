@@ -23,7 +23,7 @@ async function verifyIfCanSubmit(
     async function ifSignIn(verify: String) {
         if (verify == "AccountExists") {
             console.log('[OK] Login successful')
-            setPath('/logged/')
+            setPath('logged')
         } else {
             console.log('[FAIL] Login fail. incorrect data or not exists this account.')
             setPath('/')

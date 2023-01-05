@@ -29,8 +29,7 @@ export default async (request, response) => {
     });
 
     if (users != null) {
-      response.json("AccountExists");
-      // setDataForContext(users.username)
+      response.json(users);
     } else {
       response.json("noOne");
     }

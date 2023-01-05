@@ -9,9 +9,9 @@ import Head from 'next/head'
 // react hooks
 import { useState } from "react"
 
+
 function Home() {
     const [state, setState] = useState('signIn')
-
     return (
         <div className={styles.container}>
             <Head>
