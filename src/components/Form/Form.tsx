@@ -26,6 +26,8 @@ function Form({ state, setState }) {
         const response = await axios.post('/api/utils/getUser', { data: data })
         const responseD = await response.data
         window.location.pathname = `/logged/${responseD._id}`
+        setDataForContext(responseD)
+
     }
 
     useEffect(() => {

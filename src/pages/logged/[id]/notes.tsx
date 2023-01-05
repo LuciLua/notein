@@ -8,12 +8,17 @@ import AnimatedPage from "../../../styles/animations/AnimatedPage"
 import Menu from "../../../components/Menu/Menu"
 import MyNotes from "../../../components/MyNotes/MyNotes"
 import { useContext, useEffect } from "react"
+
 import { UserContext } from "../../../contexts/UserContext"
-import axios from "axios"
 
 function Notes() {
 
-    const [dataForContext, setDataForContext] = useContext<any>(UserContext);
+    const [dataForContext, setDataForContext] = useContext(UserContext)
+
+    useEffect(() => {
+        console.log(dataForContext)
+        setDataForContext => {username: 'sad'}
+    }, [])
 
     return (
         <div className={styles.container}>

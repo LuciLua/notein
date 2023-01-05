@@ -9,7 +9,7 @@ import StyleLight from "../styles/themes/light"
 function App({ Component, pageProps }) {
 
     const [theme, setTheme] = useState('light')
-    const [dataForContext, setDataForContext] = useState<any>({})
+    const [dataForContext, setDataForContext] = useState({})
 
     function onClickToggle() {
         theme == 'dark' ? setTheme('light') : setTheme('dark')
