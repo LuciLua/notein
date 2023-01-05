@@ -7,7 +7,14 @@ import AnimatedPage from "../../../styles/animations/AnimatedPage"
 // components
 import Menu from '../../../components/Menu/Menu'
 
+import { UserContext } from "../../../contexts/UserContext"
+import { useContext } from "react"
+
 function Config() {
+
+    const [dataForContext, setDataForContext] = useContext(UserContext)
+    console.log('in cofnig:', dataForContext)
+
     return (
         <div className={styles.container}>
             <Head>

@@ -1,28 +1,35 @@
 // styles
-import { useEffect, useState } from 'react'
-import ToggleTheme from '../components/toggleTheme/ToggleTheme'
-import { UserContext } from '../contexts/UserContext'
 import '../styles/globals.scss'
-import StyleDark from "../styles/themes/dark"
-import StyleLight from "../styles/themes/light"
+// components
+import ToggleTheme from '../components/toggleTheme/ToggleTheme'
+// react hooks
+import { useEffect, useState } from 'react'
+// contexts
+import { ThemeProvider } from '../contexts/ThemeContext'
+import { UserProvider } from '../contexts/UserContext'
 
 function App({ Component, pageProps }) {
 
-    const [theme, setTheme] = useState('light')
+    const [theme, setTheme] = useState('dark')
     const [dataForContext, setDataForContext] = useState({})
 
     function onClickToggle() {
-        theme == 'dark' ? setTheme('light') : setTheme('dark')
+        if (theme == 'dark') {
+            setTheme('light')
+            console.log(theme)
+        } else {
+            setTheme('dark')
+            console.log(theme)
+        }
     }
 
     return (
-        <>
-            {theme == 'light' ? <StyleDark /> : <StyleLight />}
-            <UserContext.Provider value={[dataForContext, setDataForContext]}>
-                <ToggleTheme onClick={onClickToggle} theme={theme} />
+        <ThemeProvider value={theme}>
+            <ToggleTheme onClick={onClickToggle} theme={theme} />
+            <UserProvider value={[dataForContext, setDataForContext]}>
                 <Component {...pageProps} />
-            </UserContext.Provider>
-        </>
+            </UserProvider>
+        </ThemeProvider>
     )
 }
 

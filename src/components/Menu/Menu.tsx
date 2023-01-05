@@ -10,13 +10,13 @@ import { useContext, useEffect, useRef } from 'react'
 import selectMenuOption from '../../utils/activeElements'
 // next components
 import Link from 'next/link'
-// import { UserContext } from '../../contexts/UserContext'
+import { UserContext } from '../../contexts/UserContext'
 // context
 
 
 function Menu() {
 
-    // const [dataForContext, setDataForContext] = useContext(UserContext)
+    const [dataForContext, setDataForContext] = useContext<any>(UserContext)
 
     const c_menu = useRef<any>(null)
 
@@ -35,11 +35,11 @@ function Menu() {
 
     useEffect(() => {
 
-        if (window.location.pathname == `/logged/1/notes` || window.location.pathname == `/logged/1`) {
+        if (window.location.pathname == `/logged/${dataForContext.userId}/notes` || window.location.pathname == `/logged/${dataForContext.userId}`) {
             console.log('select: notes')
             selectMenuOption(menuNotes.current, '#ff9f19')
         }
-        if (window.location.pathname == `/logged/1/config`) {
+        if (window.location.pathname == `/logged/${dataForContext.userId}/config`) {
             console.log('select: config')
             selectMenuOption(menuConfig.current, '#ff9f19')
         }
@@ -50,7 +50,7 @@ function Menu() {
         <div className={styles.c_menu} ref={c_menu}>
             <ul className={styles.c_menu_logo}>
                 <li className={styles.c_menu_list_item}>
-                    <Link ref={menuNotes} href={`/logged/1/notes`} className={styles.c_menu_list_item_link}>
+                    <Link ref={menuNotes} href={`/logged/${dataForContext.userId}/notes`} className={styles.c_menu_list_item_link}>
                         <span className={styles.c_menu_logo_icon}>
                             <TbNotes />
                         </span>
@@ -62,7 +62,7 @@ function Menu() {
             </ul>
             <ul className={styles.c_menu_list}>
                 <li className={styles.c_menu_list_item}>
-                    <Link ref={menuNotes} href={`/logged/1/notes`} className={styles.c_menu_list_item_link}>
+                    <Link ref={menuNotes} href={`/logged/${dataForContext.userId}/notes`} className={styles.c_menu_list_item_link}>
                         <span className={styles.c_menu_list_item_link_span}>
                             Notes
                         </span>
@@ -72,7 +72,7 @@ function Menu() {
                     </Link>
                 </li>
                 <li className={styles.c_menu_list_item}>
-                    <Link ref={menuConfig} href={`/logged/1/config`} className={styles.c_menu_list_item_link}>
+                    <Link ref={menuConfig} href={`/logged/${dataForContext.userId}/config`} className={styles.c_menu_list_item_link}>
                         <span className={styles.c_menu_list_item_link_span}>
                             My Account
                         </span>

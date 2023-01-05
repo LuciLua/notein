@@ -1,7 +1,5 @@
 // import { useContext } from 'react';
 import connectToDatabase from "../connectToDatabase";
-import loginService from "../../../services/auth.service";
-import { ObjectId } from "mongodb";
 
 export default async (request, response) => {
   const { id } = request.body;
@@ -10,8 +8,6 @@ export default async (request, response) => {
   const collection = db.collection("users");
 
   try {
-
-    // Store hash in your password DB.
     const users = await collection.findOne({
       _id: id,
     });

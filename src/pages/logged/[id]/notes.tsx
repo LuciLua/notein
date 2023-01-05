@@ -14,10 +14,9 @@ import { UserContext } from "../../../contexts/UserContext"
 function Notes() {
 
     const [dataForContext, setDataForContext] = useContext(UserContext)
+    console.log('in notes:', dataForContext)
 
     useEffect(() => {
-        console.log(dataForContext)
-        setDataForContext => {username: 'sad'}
     }, [])
 
     return (
