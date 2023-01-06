@@ -9,7 +9,8 @@ web app focused on storing notes
 ### Features
 
 #### 📃 Login Form: you can make a account for access your notes and configure your profile 
-#### 🌚 Dark Mode (not yet)
+#### 🌚 Dark Mode
+#### 📃 Auth with MongoDB
 
 ## Preview
 
