@@ -1,0 +1,10 @@
+.containerProfile {
+    background-color: var(--secondaryColor);
+    color: var(--labelColor);
+
+    width: calc(100vw - var(--menuWidth) - 30px);
+    height: calc(100vh - 100px);
+    border-radius: 12px;
+
+    padding: 10px;
+}

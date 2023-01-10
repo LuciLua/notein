@@ -35,7 +35,7 @@ function Logged() {
     console.log('in logged:', dataForContext)
 
     return (
-        <div className={styles.container}>
+        <div className='container'>
             <Head>
                 <title>NoteIn |  </title>
             </Head>

@@ -20,7 +20,7 @@ function Notes() {
     }, [])
 
     return (
-        <div className={styles.container}>
+        <div className='container'>
             <Head>
                 <title>NoteIn | Name </title>
             </Head>

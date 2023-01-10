@@ -1,5 +1,5 @@
 // styles
-import styles from "../../../styles/pages/notes.module.scss"
+import styles from "../../../styles/pages/config.module.scss"
 // next components
 import Head from 'next/head'
 // animations
@@ -13,17 +13,17 @@ import { useContext } from "react"
 function Config() {
 
     const [dataForContext, setDataForContext] = useContext(UserContext)
-    console.log('in cofnig:', dataForContext)
+    console.log('in config:', dataForContext)
 
     return (
-        <div className={styles.container}>
+        <div className='container'>
             <Head>
                 <title>NoteIn | Config </title>
             </Head>
             <main>
                 <Menu />
                 <AnimatedPage>
-                    <div className={styles.containerText}>
+                    <div className={styles.containerProfile}>
                         <h1>Config</h1>
                         <p>Config about your account</p>
                     </div>
