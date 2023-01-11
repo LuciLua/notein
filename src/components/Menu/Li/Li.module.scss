@@ -1,0 +1,28 @@
+.c_menu_logo_item {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+
+    .c_menu_logo_item_link {
+        text-decoration: none;
+        display: flex;
+
+        gap: 10px;
+
+        .c_menu_logo_span,
+        .c_menu_logo_icon {
+            color: var(--default);
+
+            font-size: 25px;
+            font-weight: 700;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
+
+

@@ -2,34 +2,46 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 :root{
-    --primaryColor: #ff9f19;
+    --primaryColor: #004a7c;
     --secondaryColor: #1f1f1e;
 
-    --primaryColorPastelDark25opacity: #715e438a;
+    --primaryColorPastelDark25opacity: #2845598a;
 
-    --primaryColorPastelDark: #7b6240;
-    --primaryColorPastelLight: #c4a67d;
+    --primaryColorPastelDark: #335872;
+    --primaryColorPastelLight: #005995;
 
-    --primaryColorPastel: #f8b557;
+    --primaryColorPastel: #;
 
-    --primaryColorVivid: #ff9500;
+    --primaryColorVivid: #0098ff;
 
     --labelColor: #8e8e8e;
     --h1Color: #f3f3f3;
     --h2Color: #8e8d8d;
 
-    --borderSelected: #ff9f19;
+    --borderSelected: #0098ff;
     --borderNOTSelected: #464645;
 
-    --buttonFocusBG: #f8b557;
-    --buttonFocusCOLOR: #20201e;
+    // Opacity Button:
+    --buttonOpacity50BG: #0066aa;
+    --buttonOpacity50Color: #7eaac9;
 
-    --buttonActiveBG: #b26f11;
+    // Buttons
+    --buttonNotFocusColor: #1f1f1f;
+    --buttonNotFocusBG: #0078c9;
+    --buttonFocusBG: #008fff;
+    --buttonFocusCOLOR: #fff;
+    --buttonActiveBG: #005995;
 
+    --boxshadowColorActive: #0a1c2b;
+    --boxshadowColorInactive: #1f1f1f;
 
-    --yellowDefault:  #e38d16;
+    --default:  #0078c9;
 
     --menuBG: #1f1f1e;
-    --notesBG: #ff9f19;
+    --notesBG: #0078c9;
+    --menuLiBG: #282826;
+    --menuLiColor: #6b6b68; 
+
+    --activeElement: #45b4ff;
 }
 `;

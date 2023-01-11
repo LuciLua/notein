@@ -44,31 +44,30 @@
         pointer-events: none;
 
         &.active {
-            background-color: var(--primaryColor);
-            color: #1e1e1e;
+            background-color: var(--buttonNotFocusBG);
+            color: var(--buttonNotFocusColor);
             cursor: pointer;
             user-select: none;
             pointer-events: all;
 
-            &:focus {
+            box-shadow: 0 0 8px var(--boxshadowColorInactive) inset;
+
+            &:focus, &:hover {
                 background-color: var(--buttonFocusBG);
                 outline: 1px solid var(--buttonFocusColor);
                 color: var(--buttonFocusCOLOR);
+
+                box-shadow: 0 0 8px var(--boxshadowColorActive);
             }
 
-            &:active{
+            &:active {
                 background-color: var(--buttonActiveBG);
             }
 
             a {
                 user-select: none;
                 pointer-events: all;
-                // color: var(--grayDarkPrimary);
                 cursor: pointer;
-
-                // &:hover {
-                //     background-color: var(--primaryColorPastelDark25opacity);
-                // }
             }
         }
     }

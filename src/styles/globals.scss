@@ -29,7 +29,8 @@ body {
 }
 
 .active {
-    color: #ff9f19;
+    color: var(--activeElement);
+    background-color: var(--activeElement);
 }
 
 .container {
@@ -48,6 +49,7 @@ body {
     color: #1f1f1e;
 
     padding: 30px;
+
 }
 
 @media (max-width: 450px) {
@@ -57,6 +59,3 @@ body {
 
     }
 }
-
-// @import 'themes/dark.scss';
-// @import 'themes/light.scss';

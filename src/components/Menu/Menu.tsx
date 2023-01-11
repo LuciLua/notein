@@ -3,7 +3,6 @@ import styles from './Menu.module.scss'
 // icons
 import { BiExit } from 'react-icons/bi'
 import { MdOutlineManageAccounts } from 'react-icons/md'
-import { TbNotes } from "react-icons/tb"
 // react hooks
 import { useContext, useEffect, useRef } from 'react'
 // utils
@@ -11,6 +10,8 @@ import selectMenuOption from '../../utils/activeElements'
 // next components
 import Link from 'next/link'
 import { UserContext } from '../../contexts/UserContext'
+import Li from './Li/Li'
+import { TbNotes } from 'react-icons/tb'
 // context
 
 
@@ -37,11 +38,11 @@ function Menu() {
 
         if (window.location.pathname == `/logged/${dataForContext.userId}/notes` || window.location.pathname == `/logged/${dataForContext.userId}`) {
             console.log('select: notes')
-            selectMenuOption(menuNotes.current, '#ff9f19')
+            selectMenuOption(menuNotes.current, 'var(--activeElement)')
         }
         if (window.location.pathname == `/logged/${dataForContext.userId}/config`) {
             console.log('select: config')
-            selectMenuOption(menuConfig.current, '#ff9f19')
+            selectMenuOption(menuConfig.current, 'var(--activeElement)')
         }
 
     })
@@ -49,48 +50,53 @@ function Menu() {
     return (
         <div className={styles.c_menu} ref={c_menu}>
             <ul className={styles.c_menu_logo}>
-                <li className={styles.c_menu_list_item}>
-                    <Link ref={menuNotes} href={`/logged/${dataForContext.userId}/notes`} className={styles.c_menu_list_item_link}>
-                        <span className={styles.c_menu_logo_icon}>
-                            <TbNotes />
-                        </span>
-                        <span className={styles.c_menu_logo_span}>
-                            NoteIn
-                        </span>
-                    </Link>
-                </li>
+                <Li
+                    containerStylesLi={styles.c_menu_logo_item}
+                    Liref={menuNotes}
+                    href={`/logged/${dataForContext.userId}/notes`}
+                    className={styles.c_menu_logo_item_link}
+                    spanStylesIcon={styles.c_menu_logo_icon}
+                    icon={<TbNotes />}
+                    spanStylesText={styles.c_menu_logo_span}
+                    text={'NoteIn'}
+                    onClick={''}
+                />
             </ul>
             <ul className={styles.c_menu_list}>
-                <li className={styles.c_menu_list_item}>
-                    <Link ref={menuNotes} href={`/logged/${dataForContext.userId}/notes`} className={styles.c_menu_list_item_link}>
-                        <span className={styles.c_menu_list_item_link_span}>
-                            Notes
-                        </span>
-                        <span className={styles.c_menu_list_item_link_icon}>
-                            <TbNotes />
-                        </span>
-                    </Link>
-                </li>
-                <li className={styles.c_menu_list_item}>
-                    <Link ref={menuConfig} href={`/logged/${dataForContext.userId}/config`} className={styles.c_menu_list_item_link}>
-                        <span className={styles.c_menu_list_item_link_span}>
-                            My Account
-                        </span>
-                        <span className={styles.c_menu_list_item_link_icon}>
-                            <MdOutlineManageAccounts />
-                        </span>
-                    </Link>
-                </li>
-                <li className={styles.c_menu_list_item}>
-                    <Link ref={menuExit} onClick={(e) => { hiddenMenuSlowly(e) }} href={'/'} className={styles.c_menu_list_item_link}>
-                        <span className={styles.c_menu_list_item_link_span}>
-                            Exit
-                        </span>
-                        <span className={styles.c_menu_list_item_link_icon}>
-                            <BiExit />
-                        </span>
-                    </Link>
-                </li>
+                <Li
+                    containerStylesLi={styles.c_menu_list_item}
+                    Liref={menuNotes}
+                    href={`/logged/${dataForContext.userId}/notes`}
+                    className={styles.c_menu_list_item_link}
+                    spanStylesIcon={styles.c_menu_list_icon}
+                    icon={<TbNotes />}
+                    spanStylesText={styles.c_menu_list_span}
+                    text={'Notes'}
+                    onClick={''}
+
+                />
+                <Li
+                    containerStylesLi={styles.c_menu_list_item}
+                    Liref={menuConfig}
+                    href={`/logged/${dataForContext.userId}/config`}
+                    className={styles.c_menu_list_item_link}
+                    spanStylesIcon={styles.c_menu_list_icon}
+                    icon={<MdOutlineManageAccounts />}
+                    spanStylesText={styles.c_menu_list_span}
+                    text={'My Account'}
+                    onClick={''}
+                />
+                <Li
+                    containerStylesLi={styles.c_menu_list_item}
+                    Liref={menuExit}
+                    href={`/`}
+                    className={styles.c_menu_list_item_link}
+                    spanStylesIcon={styles.c_menu_list_icon}
+                    icon={<BiExit />}
+                    spanStylesText={styles.c_menu_list_span}
+                    text={'Exit'}
+                    onClick={hiddenMenuSlowly}
+                />
             </ul>
         </div >
     )

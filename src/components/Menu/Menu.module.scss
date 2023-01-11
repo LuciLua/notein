@@ -10,6 +10,8 @@
     top: 0px;
     left: 0px;
 
+    padding: 15px 8px;
+
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -20,64 +22,63 @@
     z-index: 10;
 
     .c_menu_logo {
-        width: fit-content;
-        justify-self: center;
-
-        margin-top: 20px;
-
-        .c_menu_logo_span,
-        .c_menu_logo_icon {
-            color: var(--yellowDefault);
-            font-size: 25px;
-            font-weight: 700;
-
+        height: fit-content;
+        width: 100%;
+        .c_menu_logo_item {
+            width: 100%;
+            padding: 10px;
             display: flex;
             justify-content: center;
-            align-items: center;
+
+            .c_menu_logo_item_link {
+                text-decoration: none;
+                display: flex;
+
+                gap: 10px;
+                
+                .c_menu_logo_span,
+                .c_menu_logo_icon {
+                    color: var(--default);
+
+                    font-size: 25px;
+                    font-weight: 700;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
 
         }
     }
 
-
-    .c_menu_list,
-    .c_menu_logo {
+    .c_menu_list {
+        list-style: none;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        list-style: none;
 
-        gap: 30px;
-
-        position: relative;
-
-        margin-bottom: 20px;
+        gap: 10px;
 
         .c_menu_list_item {
-            // background-color: aqua;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-
-
             .c_menu_list_item_link {
-                // background-color: red;
+                background-color: var(--menuLiBG);
+                border-radius: 30px;
 
-                gap: 10px;
+                width: 100%;
+                padding: 10px 20px;
 
                 position: relative;
 
-                width: fit-content;
-                height: fit-content;
-
                 display: flex;
-                justify-content: center;
                 align-items: center;
+                justify-content: space-between;
+                flex-direction: row-reverse;
 
                 text-decoration: none;
                 font-weight: 300;
 
-                color: var(--h2Color);
-
+                color: var(--menuLiColor);
 
                 transition: 0.3s;
 
