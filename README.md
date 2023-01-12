@@ -21,7 +21,8 @@ web app focused on storing notes
 
 ## Preview
 
-<img src="preview.png">
+<img src="darkpreview.png">
+<img src="lightpreview.png">
 
 ## Access
 
