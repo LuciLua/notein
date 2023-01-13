@@ -8,9 +8,10 @@ function Buttons({ allowLoginOrCreate, state, setState }) {
 
     const c_btn = useRef<any>(null)
     const c_btn_createOrLogin = useRef<any>(null)
+    const c_btn_remeberme = useRef<any>(null)
 
     useEffect(() => {
-        verifyFormAndChangeDOMButtons(state, c_btn, c_btn_createOrLogin, allowLoginOrCreate, styles)
+        verifyFormAndChangeDOMButtons(state, c_btn, c_btn_createOrLogin, allowLoginOrCreate, styles, c_btn_remeberme)
     })
 
     return (
@@ -20,6 +21,12 @@ function Buttons({ allowLoginOrCreate, state, setState }) {
                 className={`${styles.c_btn}`}
                 disabled={!allowLoginOrCreate}
                 type="submit">
+            </button>
+            <button
+                ref={c_btn_remeberme}
+                className={styles.c_btn_remeberme}
+                onClick={(e) => {e.preventDefault(); alert('ops...')}}
+                type="button">
             </button>
             <button
                 ref={c_btn_createOrLogin}

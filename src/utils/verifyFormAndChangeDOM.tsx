@@ -1,14 +1,21 @@
 function verifyFormAndChangeDOMButtons(state: String,
     c_btn: any, c_btn_createOrLogin: any,
     allowLoginOrCreate: Boolean,
-    styles: any) {
+    styles: any,
+    c_btn_remeberme: any
+    ) {
 
     if (state == 'signUp') {
         c_btn.current.innerText = 'Create now'
         c_btn_createOrLogin.current.innerText = 'Login here'
+        c_btn_remeberme.current.style.display = 'none'
+
     } else {
         c_btn.current.innerText = 'Login'
         c_btn_createOrLogin.current.innerText = 'Create your account here'
+        
+        c_btn_remeberme.current.style.display = 'flex'
+        c_btn_remeberme.current.innerText = 'I forgot my password'
     }
 
     if (allowLoginOrCreate) {
