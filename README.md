@@ -13,7 +13,7 @@ web app focused on storing notes
 #### 📃 Auth with MongoDB
 #### 📃 note pages for each user
 
-## add after
+## ⚙️ add after
 
 #### remember-me pass
 #### email verification
