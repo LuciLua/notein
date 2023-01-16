@@ -15,7 +15,7 @@ web app focused on storing notes
 
 ## ⚙️ add after
 
-#### remember-me pass
+#### remember-me pass with send-email api integration 
 #### email verification
 #### CRUD the same user 
 
